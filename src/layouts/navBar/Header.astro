@@ -1,0 +1,14 @@
+---
+import { LogoIcon } from "../../components/Icons";
+import { NavBar } from "./NavBar.tsx";
+---
+
+
+<header
+	class="bg-rich_black-200 text-rufous fixed top-0 z-[20] flex-wrap mx-auto flex w-screen items-center justify-between br"
+>
+	<a href="/" aria-label="Logo Button" class="ml-2 active:scale-110 active:text-rufous-600 hover:scale-110 hover:text-rufous-600">
+		<LogoIcon />
+	</a>
+	<NavBar client:visible />
+</header>

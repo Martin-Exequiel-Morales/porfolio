@@ -1,0 +1,124 @@
+{
+	"techs": [
+		{
+			"name": "PHP",
+			"seniority": "Semi-Senior",
+			"animation": "beat",
+			"icon": "/icons/php_dark.svg"
+		},
+		{
+			"name": "JavaScript",
+			"seniority": "Semi-Senior",
+			"animation": "beat",
+			"icon": "/icons/javascript_dark.svg"
+		},
+		{
+			"name": "HTML",
+			"seniority": "Semi-Senior",
+			"animation": "beat",
+			"icon": "/icons/html_dark.svg"
+		},
+		{
+			"name": "Mysql",
+			"seniority": "Semi-Senior",
+			"animation": "beat",
+			"icon": "/icons/mysql_dark.svg"
+		},
+		{
+			"name": "Git",
+			"seniority": "Semi-Senior",
+			"animation": "beat",
+			"icon": "/icons/git_dark.svg"
+		},
+		{
+			"name": "CSS",
+			"seniority": "Junior",
+			"animation": "beat",
+			"icon": "/icons/css_dark.svg"
+		},
+		{
+			"name": "React",
+			"seniority": "Junior",
+			"animation": "rotation",
+			"icon": "/icons/react_dark.svg"
+		},
+		{
+			"name": "TypeScript",
+			"seniority": "Junior",
+			"animation": "beat",
+			"icon": "/icons/typescript_dark.svg"
+		},
+		{
+			"name": "Jira",
+			"seniority": "Junior",
+			"animation": "beat",
+			"icon": "/icons/jira_dark.svg"
+		},
+		{
+			"name": "Docker",
+			"seniority": "Junior",
+			"animation": "beat",
+			"icon": "/icons/docker_dark.svg"
+		},
+		{
+			"name": "Python",
+			"seniority": "Trainee",
+			"animation": "rotation",
+			"icon": "/icons/python_dark.svg"
+		},
+		{
+			"name": "AWS",
+			"seniority": "Trainee",
+			"animation": "beat",
+			"icon": "/icons/aws_dark.svg"
+		},
+		{
+			"name": "Next.js",
+			"seniority": "Trainee",
+			"animation": "beat",
+			"icon": "/icons/nextjs_dark.svg"
+		},
+		{
+			"name": "Tailwind CSS",
+			"seniority": "Trainee",
+			"animation": "beat",
+			"icon": "/icons/tailwind_dark.svg"
+		},
+		{
+			"name": "Astro.js",
+			"seniority": "Trainee",
+			"animation": "beat",
+			"icon": "/icons/astro_dark.svg"
+		},
+		{
+			"name": "Redux",
+			"seniority": "Trainee",
+			"animation": "rotation",
+			"icon": "/icons/redux_dark.svg"
+		},
+		{
+			"name": "ReactQuery",
+			"seniority": "Trainee",
+			"animation": "rotation",
+			"icon": "/icons/react_query_dark.svg"
+		},
+		{
+			"name": "Express.js",
+			"seniority": "Trainee",
+			"animation": "beat",
+			"icon": "/icons/express_dark.svg"
+		},
+		{
+			"name": "MongoDB",
+			"seniority": "Trainee",
+			"animation": "beat",
+			"icon": "/icons/mongodb_dark.svg"
+		},
+		{
+			"name": "Node.js",
+			"seniority": "Trainee",
+			"animation": "beat",
+			"icon": "/icons/node_dark.svg"
+		}
+	]
+}

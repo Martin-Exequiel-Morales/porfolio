@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import {
 	beat,
 	contactListItem,
+	contactListItemImg,
+	contactListItemToolTip,
 	contactsList,
 	leftIn,
 	reverseStandarVariation,
@@ -9,6 +11,7 @@ import {
 	rotate,
 } from "../../data/animationConfig";
 import { LinkedinIcon, MailIcon, WhatsappIcon } from "../Icons";
+import { ContactItem } from "./ContacItem";
 
 export function ContactSection() {
 	return (
@@ -47,53 +50,62 @@ export function ContactSection() {
 						whileInView="show"
 						viewport={{ once: true }}
 						variants={reverseStandarVariation}
-						className="px-20 text-rufous text-5xl h-1/6"
+						className="md:px-20 2xl:px-32 text-rufous text-3xl md:text-4xl lg:text-5xl h-2/6"
 					>
 						Thank you for seening my porfolio, if you are interested in work
 						with me, don't doubt in contacting me...{" "}
 					</motion.p>
 					<motion.ul
 						initial="hidden"
-						whileInView="show"
+						animate="show"
 						viewport={{ once: true }}
 						variants={contactsList}
 						className="w-full flex items-center justify-evenly h-3/6"
 					>
 						<motion.li
 							variants={contactListItem}
-							className="w-2/12 text-rufous-600 hover:text-rufous-700 hover:scale-125 md:scale-125 md:hover:scale-150"
+							className="w-2/12 h-full text-rufous-600 hover:text-rufous-700"
 						>
-							<a
-								href="https://wa.me/+543764691408"
-								aria-label="Whatsapp link"
-								target="_blank"
+							<ContactItem
+								tooltip="WhatsApp"
+								aref={{
+									href: "https://wa.me/+543764691408",
+									aria: "WhatsApp Link",
+									target: "_blank",
+								}}
 							>
 								<WhatsappIcon />
-							</a>
+							</ContactItem>
 						</motion.li>
 						<motion.li
 							variants={contactListItem}
-							className="w-2/12 text-rufous-600 hover:text-rufous-700 hover:scale-125 md:scale-125 md:hover:scale-150"
+							className="w-2/12 h-full text-rufous-600 hover:text-rufous-700 hover:scale-125 md:scale-125 md:hover:scale-150"
 						>
-							<a
-								href="https://www.linkedin.com/in/martin-morales-2b8303274/"
-								aria-label="Linkedin Link"
-								target="_blank"
+							<ContactItem
+								tooltip="LinkedIn"
+								aref={{
+									href: "https://www.linkedin.com/in/martin-morales-2b8303274/",
+									aria: "LinkedIn Link",
+									target: "_blank",
+								}}
 							>
 								<LinkedinIcon />
-							</a>
+							</ContactItem>
 						</motion.li>
 						<motion.li
 							variants={contactListItem}
-							className="w-2/12 text-rufous-600 hover:text-rufous-700 hover:scale-125 md:scale-125 md:hover:scale-150"
+							className="w-2/12 h-full text-rufous-600 hover:text-rufous-700"
 						>
-							<a
-								href="mailto:martin.exequiel-morales@gmail.com?Subject=contact%web%developer"
-								aria-label="Mail Link"
-								target="_blank"
+							<ContactItem
+								tooltip="Mail"
+								aref={{
+									href: "mailto:martin.exequiel-morales@gmail.com?Subject=contact%web%developer",
+									aria: "Mail Link",
+									target: "_blank",
+								}}
 							>
 								<MailIcon />
-							</a>
+							</ContactItem>
 						</motion.li>
 					</motion.ul>
 				</motion.div>

@@ -144,6 +144,21 @@ export const contactListItem = {
 	show: { opacity: 1, y: 0, trasition: { delay: 0.5 } },
 };
 
+export const contactListItemToolTip = {
+	rest: { scale: 0, y: "+100%" },
+	hover: {
+		scale: 1,
+		y: 0,
+	},
+};
+
+export const contactListItemImg = {
+	rest: { scale: 1 },
+	hover: {
+		scale: 1.1,
+	},
+};
+
 export const leftIn = {
 	hidden: {
 		x: "-100%",
@@ -158,12 +173,12 @@ export const leftIn = {
 
 export const rightIn = {
 	hidden: {
-    x: "+100%",
-    opacity: 0,
-  },
-  show: {
-    x: 0,
-    opacity: 1,
-    transition: { delay: 0.5, duration: 1 },
-  },
+		x: "+100%",
+		opacity: 0,
+	},
+	show: {
+		x: 0,
+		opacity: 1,
+		transition: { delay: 0.5, duration: 1 },
+	},
 };

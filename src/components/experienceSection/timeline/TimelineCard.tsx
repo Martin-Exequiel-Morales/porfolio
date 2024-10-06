@@ -19,7 +19,7 @@ export function TimelineCard({ title, date, place, children }: Props) {
 			<h3 className="flex items-center justify-start text-rufous-700">
 				{place}
 			</h3>
-			<div className="pt-5 text-rufous text-base md:xl lg:text-2xl">
+			<div className="pt-5 text-rufous text-base lg:text-xl xl:text-2xl">
 				{children}
 			</div>
 		</article>

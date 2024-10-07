@@ -16,23 +16,28 @@ interface Props {
 
 export function ContactItem({ tooltip, children, aref }: Props) {
 	return (
-		<motion.div
+		<motion.a
 			initial="rest"
 			whileHover="hover"
+			whileTap="hover"
 			animate="rest"
-			className="flex flex-col justify-evenly h-1/2 xl:h-4/5"
+			className="flex flex-col justify-evenly h-full items-center"
+			href={aref.href}
+			aria-label={aref.aria}
+			target={aref.target}
 		>
 			<motion.div
 				variants={contactListItemToolTip}
-				className=" flex justify-center items-center text-2xl xl:text-4xl"
+				className=" select-none flex justify-center items-center text-[2vmax]"
 			>
 				{tooltip}
 			</motion.div>
-			<motion.div variants={contactListItemImg}>
-				<a href={aref.href} aria-label={aref.aria} target={aref.target}>
-					{children}
-				</a>
+			<motion.div
+				className="w-[6vmax] md:w-[10vmax] flex items-center justify-center"
+				variants={contactListItemImg}
+			>
+				{children}
 			</motion.div>
-		</motion.div>
+		</motion.a>
 	);
 }

@@ -153,8 +153,9 @@ export const contactListItemToolTip = {
 };
 
 export const contactListItemImg = {
-	rest: { scale: 1 },
+	rest: { y: "-2.5vmax", scale: 1 },
 	hover: {
+		y: 0,
 		scale: 1.1,
 	},
 };

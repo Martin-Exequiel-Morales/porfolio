@@ -20,7 +20,7 @@ export function NavBar() {
 	const { language, togleLanguage } = useLanguage();
 	return (
 		<>
-			<div className="w-1/3 flex justify-evenly items-center">
+			<div className="w-1/3 flex justify-between items-center gap-[2vw]">
 				<a
 					href="/"
 					aria-label={LANGUAGE[language].header.logoAlt}
@@ -28,16 +28,16 @@ export function NavBar() {
 				>
 					<LogoIcon />
 				</a>
-				<div className="w-full flex justify-center gap-11 items-center">
+				<div className="w-2/3 flex justify-center gap-[3vw] items-center">
 					<button
-						className="w-6 hover:text-rich_black-600 active:text-rich_black-600 dark:hover:text-rufous-600 dark:active:text-rufous-600"
+						className="w-6 hover:text-rich_black-600 active:text-rich_black-600 dark:hover:text-rufous-600 dark:active:text-rufous-600 active:scale-125 hover:scale-125"
 						onClick={toggleDarkMode}
 						aria-label={LANGUAGE[language].header.modeAlt}
 					>
 						{darkModeState ? <MoonIcon /> : <SunIcon />}
 					</button>
 					<button
-						className="w-6 hover:text-rich_black-600 active:text-rich_black-600 dark:hover:text-rufous-600 dark:active:text-rufous-600"
+						className="w-6 hover:text-rich_black-600 active:text-rich_black-600 dark:hover:text-rufous-600 dark:active:text-rufous-600 active:scale-125 hover:scale-125"
 						onClick={togleLanguage}
 						aria-label={LANGUAGE[language].header.languageAlt}
 					>

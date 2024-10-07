@@ -19,7 +19,7 @@ export function TechSection() {
 	return (
 		<section
 			id="tech"
-			className="pt-16 pb-8 w-full h-screen min-h-[667px] flex flex-col bg-vanilla-600 dark:bg-rich_black-300 justify-evenly items-center"
+			className="pt-16 xl:pb-14 pb-8 w-full h-screen min-h-[667px] flex flex-col bg-vanilla-600 dark:bg-rich_black-300 justify-evenly items-center"
 		>
 			<motion.h2
 				initial="hidden"

@@ -54,7 +54,7 @@ export function ContactSection() {
 						whileInView="show"
 						viewport={{ once: true }}
 						variants={reverseStandarVariation}
-						className="md:px-20 2xl:px-32 text-rich_black-100 dark:text-rufous text-[3.2vmax] h-2/6"
+						className="md:px-20 2xl:px-32 text-rich_black-100 dark:text-rufous text-[3.2vmax] 2xl:text-[3.1vmax] h-2/6"
 					>
 						{LANGUAGE[language].sections.contact.parrafo}
 					</motion.p>
@@ -64,7 +64,7 @@ export function ContactSection() {
 							whileInView="show"
 							viewport={{ once: true }}
 							variants={contactsList}
-							className="w-full h-1/2 xl:h-full flex items-center justify-evenly border rounded-3xl border-rich_black-600 dark:border-rufous bg-vanilla-700 dark:bg-rich_black-100"
+							className="overflow-hidden w-full h-1/2 xl:h-full flex items-center justify-evenly border rounded-3xl border-rich_black-600 dark:border-rufous bg-vanilla-700 dark:bg-rich_black-100"
 						>
 							<motion.li
 								variants={contactListItem}

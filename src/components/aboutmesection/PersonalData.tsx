@@ -6,7 +6,7 @@ export function PersonalData() {
 	return (
 		<motion.div
 			variants={standarVariation}
-			className="text-rufous sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl"
+			className="text-rufous text-[1.6vmax] sm:text-[1.9vmax] md:text-[1.8vmax] "
 		>
 			<ul>
 				<li>

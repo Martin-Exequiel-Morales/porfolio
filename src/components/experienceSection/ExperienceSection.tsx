@@ -8,14 +8,14 @@ export function ExperienceSection() {
 	return (
 		<section
 			id="experience"
-			className="md:pt-16 w-full h-screen min-h-[892px] flex flex-col bg-rich_black-400 justify-evenly items-center"
+			className="pt-16 w-full h-screen min-h-[667px] flex flex-col bg-rich_black-400 justify-evenly items-center"
 		>
 			<motion.h2
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
       variants={reverseStandarVariation}
-      className="flex items-center justify-center w-full h-1/6 text-rufous text-3xl md:text-7xl font-bold">
+      className="flex items-center justify-center w-full h-1/6 text-rufous text-[3.7vmax] font-bold">
 				Experience
 			</motion.h2>
 			<div 

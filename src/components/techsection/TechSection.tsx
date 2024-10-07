@@ -17,14 +17,14 @@ export function TechSection() {
 	return (
 		<section
 			id="tech"
-			className="md:py-16 w-full h-screen min-h-[892px] flex flex-col bg-rich_black-300 justify-evenly items-center"
+			className="pt-16 pb-8 w-full h-screen min-h-[667px] flex flex-col bg-rich_black-300 justify-evenly items-center"
 		>
 			<motion.h2
 				initial="hidden"
 				whileInView="show"
 				viewport={{ once: true }}
 				variants={reverseStandarVariation}
-				className="text-rufous h-1/6 flex items-center justify-center text-3xl md:text-7xl font-bold"
+				className="text-rufous h-1/6 flex items-center justify-center text-[3.7vmax] font-bold"
 			>
 				Technologies
 			</motion.h2>

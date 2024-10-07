@@ -9,17 +9,13 @@ export function TimelineCard({ title, date, place, children }: Props) {
 	return (
 		<article className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-rich_black-300 p-4 rounded border shadow-md shadow-rufous">
 			<div className="flex items-center justify-between space-x-2 mb-1">
-				<h2 className="font-bold text-rufous text-lg md:text-2xl lg:text-4xl">
-					{title}
-				</h2>
-				<time className="font-medium text-rufous-600 text-base md:text-xl lg:text-2xl">
-					{date}
-				</time>
+				<h2 className="font-bold text-rufous text-[2.3vmax] xl:text-[2.1vmax]">{title}</h2>
+				<time className="font-medium text-rufous-600 text-[1.2vmax] xl:text-[1vmax]">{date}</time>
 			</div>
-			<h3 className="flex items-center justify-start text-rufous-700">
+			<h3 className="flex items-center justify-start text-rufous-700 text-[1.4vmax] xl:text-[1.2vmax]">
 				{place}
 			</h3>
-			<div className="pt-5 text-rufous text-base lg:text-xl xl:text-2xl">
+			<div className="pt-5 text-rufous text-[1.6vmax]  xl:text-[1.4vmax]">
 				{children}
 			</div>
 		</article>

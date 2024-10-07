@@ -8,7 +8,7 @@ export function AboutSection() {
 	return (
 		<section
 			id="about-me"
-			className="md:pt-16 w-full h-screen min-h-[892px] flex flex-col xl:flex-row 2xl:flex-row justify-evenly items-center"
+			className="md:pt-16 w-full h-screen min-h-[667px] flex flex-col xl:flex-row 2xl:flex-row justify-evenly items-center"
 		>
 			<motion.div
 				initial="hidden"

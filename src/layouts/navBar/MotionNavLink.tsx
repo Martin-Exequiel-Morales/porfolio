@@ -9,7 +9,7 @@ export function MotionNavLink({ link, children }: NavLinkProps) {
 	return (
 		<motion.a
 			onClick={() => {
-				setTimeout(closeNavBar, 500);
+				setTimeout(closeNavBar, 600);
 			}}
 			variants={mobileNavItemVariant}
 			className="w-full select-none flex justify-center items-center h-16 border-t active:scale-150 active:text-rufous-700  border-rufous hover:text-rufous-600 hover:text-xl hover:transition-all hover:duration-500 hover:border hover:border-x-rufous-600"

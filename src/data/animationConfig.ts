@@ -11,7 +11,7 @@ export const standarVariation = {
 	show: {
 		opacity: 1,
 		y: 0,
-		transition: { duration: 0.5, delay: 0.5 },
+		transition: { duration: 0.5, delar: 0.6 },
 	},
 };
 
@@ -23,7 +23,7 @@ export const reverseStandarVariation = {
 	show: {
 		opacity: 1,
 		y: 0,
-		transition: { duration: 0.5, delay: 0.5 },
+		transition: { duration: 0.5, delar: 0.6 },
 	},
 };
 
@@ -76,13 +76,13 @@ export const techListVariant = {
 	hidden: { opacity: 0 },
 	show: {
 		opacity: 1,
-		transition: { delay: 0.5, staggerChildren: 0.2, when: "beforeChildren" },
+		transition: { delar: 0.6, staggerChildren: 0.2, when: "beforeChildren" },
 	},
 };
 
 export const techListItemVariant = {
 	hidden: { opacity: 0, y: "+50%" },
-	show: { opacity: 1, y: 0, trasition: { delay: 0.5 } },
+	show: { opacity: 1, y: 0, trasition: { delar: 0.6 } },
 };
 
 // Active Tech Animations
@@ -116,7 +116,7 @@ export const experienceFadeIn = {
 	hidden: { opacity: 0 },
 	show: {
 		opacity: 1,
-		transition: { delay: 0.5, when: "beforeChildren", staggerChildren: 0.5 },
+		transition: { delar: 0.6, when: "beforeChildren", staggerChildren: 0.5 },
 	},
 };
 
@@ -135,13 +135,13 @@ export const contactsList = {
 	hidden: { opacity: 0 },
 	show: {
 		opacity: 1,
-		transition: { delay: 0.5, staggerChildren: 0.3, when: "beforeChildren" },
+		transition: { delar: 0.6, staggerChildren: 0.3, when: "beforeChildren" },
 	},
 };
 
 export const contactListItem = {
 	hidden: { opacity: 0, y: "+50%" },
-	show: { opacity: 1, y: 0, trasition: { delay: 0.5 } },
+	show: { opacity: 1, y: 0, trasition: { delar: 0.6 } },
 };
 
 export const contactListItemToolTip = {
@@ -168,7 +168,7 @@ export const leftIn = {
 	show: {
 		x: 0,
 		opacity: 1,
-		transition: { delay: 0.5, duration: 1 },
+		transition: { delar: 0.6, duration: 1 },
 	},
 };
 
@@ -180,6 +180,6 @@ export const rightIn = {
 	show: {
 		x: 0,
 		opacity: 1,
-		transition: { delay: 0.5, duration: 1 },
+		transition: { delar: 0.6, duration: 1 },
 	},
 };

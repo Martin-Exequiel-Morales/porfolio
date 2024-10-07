@@ -15,7 +15,7 @@ export function AboutSection() {
 				whileInView="show"
 				viewport={{ once: true }}
 				variants={leftCard}
-				className="bg-rich_black-300 w-9/12 sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-5/12 h-2/6 xl:h-4/6 rounded-3xl rounded-l-none shadow-lg shadow-rufous-300 border border-l-0 mr-auto xl:mb-auto xl:mt-6 2xl:mb-auto 2xl:mt-6 flex flex-col justify-evenly items-center"
+				className="bg-vanilla-700 dark:bg-rich_black-300 w-9/12 sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-5/12 h-2/6 xl:h-4/6 rounded-3xl rounded-l-none shadow-lg shadow-rich_black-600 dark:shadow-rufous-300 border border-l-0 mr-auto xl:mb-auto xl:mt-6 2xl:mb-auto 2xl:mt-6 flex flex-col justify-evenly items-center"
 			>
 				<PersonalCard />
 				<PersonalData />
@@ -25,7 +25,7 @@ export function AboutSection() {
 				whileInView="show"
 				viewport={{ once: true }}
 				variants={rigthCard}
-				className="bg-rich_black-300 w-9/12 sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-5/12 h-1/3 xl:h-4/6 rounded-3xl rounded-r-none shadow-lg shadow-rufous-300 border border-r-0 ml-auto xl:mt-auto xl:mb-6 2xl:mt-auto 2xl:mb-6"
+				className="bg-vanilla-700 dark:bg-rich_black-300 w-9/12 sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-5/12 h-1/3 xl:h-4/6 rounded-3xl rounded-r-none shadow-lg shadow-rich_black-600 dark:shadow-rufous-300 border border-r-0 ml-auto xl:mt-auto xl:mb-6 2xl:mt-auto 2xl:mb-6"
 			>
 				<AboutMe />
 			</motion.div>

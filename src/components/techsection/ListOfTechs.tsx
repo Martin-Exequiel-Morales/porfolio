@@ -5,9 +5,11 @@ import {
 	techListItemVariant,
 	techListVariant,
 } from "../../data/animationConfig";
+import { useDarkMode } from "../../hooks/useDarkMode";
 
 export function ListOfTechs({ techs }: { techs: Tech[] }) {
 	const setActiveTech = useActiveTech((state) => state.setActiveTech);
+	const { darkModeState } = useDarkMode();
 
 	const handleTech = (tech: ActiveTech) => {
 		setActiveTech(tech);
@@ -31,12 +33,12 @@ export function ListOfTechs({ techs }: { techs: Tech[] }) {
 						onClick={() => {
 							handleTech(tech);
 						}}
-						className="md:even:ml-auto md:even:mr-20 md:odd:mr-auto md:odd:ml-20  border border-rufous hover:scale-125 hover:bg-rufous-700 active:bg-rufous-700 p-1 md:p-2 lg:p-4"
+						className="select-none md:even:ml-auto md:even:mr-20 md:odd:mr-auto md:odd:ml-20  border border-rich_black-100 dark:border-rufous hover:scale-125 hover:bg-rich_black-800 dark:hover:bg-rufous-700 active:bg-rich_black-800 dark:active:bg-rufous-700 p-1 md:p-2 lg:p-4"
 						key={tech.name}
 					>
 						<img
 							className="w-6 h-6 md:w-8 md:h-8"
-							src={tech.icon}
+							src={darkModeState ? tech.iconDark : tech.icon}
 							alt={tech.name}
 							loading="lazy"
 						/>

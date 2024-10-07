@@ -7,7 +7,7 @@ export function TimelineItem({ children }: { children: React.ReactNode }) {
 			variants={experienceFadeInNoDelay}
 			className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
 		>
-			<div className="flex items-center justify-center w-12 h-12 rounded-full border border-rufous bg-rich_black-100 text-rufous shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/3 md:group-even:translate-x-1/3">
+			<div className="flex items-center justify-center w-12 h-12 rounded-full border border-rich_black-100 dark:border-rufous bg-vanilla-700 dark:bg-rich_black-100 text-rich_black-100 dark:text-rufous shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/3 md:group-even:translate-x-1/3">
 				<svg
 					className="fill-current"
 					xmlns="http://www.w3.org/2000/svg"

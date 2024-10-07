@@ -2,6 +2,7 @@ export interface Tech {
 	name: string;
 	seniority: string;
 	animation: string;
+	iconDark: string;
 	icon: string;
 }
 
@@ -9,6 +10,7 @@ export interface ActiveTech {
 	name: string;
 	seniority: string;
 	icon: string;
+	iconDark: string;
 	animation: string;
 }
 

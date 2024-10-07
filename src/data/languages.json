@@ -1,0 +1,162 @@
+{ 
+	"es": {
+		"header": {
+			"logoAlt": "Icono del Logo",
+			"modeAlt": "Icono del Cambio de Colores",
+			"languageAlt": "Icono del Cambio de Lenguaje"
+		},
+		"sections": {
+			"about": {
+				"title": "Sobre Mi",
+				"personalCard": {
+					"title": "Desarrollador Web",
+					"labels": {
+						"age": "Edad",
+						"nationality": "Nacionalidad",
+						"languages": "Lenguajes",
+						"contact": "Telefono",
+						"email": "Email"
+					},
+					"values": {
+						"nacionality": "Argentino",
+						"languages": "Español, Ingles",
+						"contact": "+54 376 - 4691408",
+						"email": "martin.exequiel.morales@gmail.com"
+					}
+				},
+				"textCard": {
+					"title": "SOBRE MI",
+					"content": "Soy un apasionado desarrollador web que disfruta creando soluciones personalizadas y eficientes utilizando diferentes tecnologías. Me encanta aprender nuevas tecnologías y aplicarlas a proyectos del mundo real."
+				}
+			},
+			"technologies": {
+				"title": "Tecnologias",
+				"activeTech": {
+					"name": "Nombre",
+					"seniority": "Veteranía"
+				}
+			},
+			"experience": {
+				"title": "Experiencia",
+				"listItems": [
+					{
+						"company": "Cámara de representantes de la provincia de Misiones",
+						"position": "Analista de Sistemas",
+						"duration": "12/2023 - 01/2024",
+						"description": "Mantuve y desarrollé sistemas de información basados en PHP, JavaScript, MySQL y CSS, con algunas extensiones en Python.",
+						"extra": "Implementé entornos de PHP y MySQL utilizando contenedores Docker en sistemas operativos basados en Ubuntu."
+					},
+					{
+						"company": "Autonomo",
+						"position": "Desarrollador Web",
+						"duration": "01/2024 - Actualidad",
+						"description": "Actualmente estoy ampliando mis conocimientos en el ecosistema de JavaScript (MongoDB, Express, React, Node.js) y explorando las posibilidades de AWS para crear aplicaciones en la nube escalables.",
+						"extra": ""
+					}
+				]
+			},
+			"contact": {
+				"title": "Contacto",
+				"parrafo": "Gracias por ver mi Portfolio, si estas interesado en trabajar conmigo, no dudes en contactarme...",
+				"iconsLabels": {
+					"whatsapp": "WhatsApp",
+					"linkedin": "LinkedIn",
+					"mail": "Email"
+				},
+				"iconsAlts": {
+					"whatsapp": "Icono de WhatsApp",
+					"linkedin": "Icono de LinkedIn",
+					"mail": "Icono de Email",
+					"react": "Icono de React",
+					"astro": "Icono de Astro"
+				}
+			}
+		},
+		"footer": {
+			"madeBy": "Hecho por",
+			"whatsappAlt": "Icono de WhatsApp",
+			"linkedinAlt": "Icono de LinkedIn",
+			"mailAlt": "Icono de Mail"
+		}
+	},
+	"en": {
+		"header": {
+			"logoAlt": "Logo Icon",
+			"modeAlt": "Color Change Icon",
+			"languageAlt": "Icono del Cambio de Lenguaje"
+		},
+		"sections": {
+			"about": {
+				"title": "About Me",
+				"personalCard": {
+					"title": "Web Developer",
+					"labels": {
+						"age": "Age",
+						"nationality": "Nationality",
+						"languages": "Languages",
+						"contact": "Contact",
+						"email": "Email"
+					},
+					"values": {
+						"nacionality": "Argetinian",
+						"languages": "Spanish, English",
+						"contact": "+54 376 - 4691408",
+						"email": "martin.exequiel.morales@gmail.com"
+					}
+				},
+				"textCard": {
+					"title": "ABOUT ME",
+					"content": "I am a passionate web developer that enjoys creating custom and efficient solutions using different technologies. I love learning new technologies and applying them to real-world projects."
+				}
+			},
+			"technologies": {
+				"title": "Technologies",
+				"activeTech": {
+					"name": "Name",
+					"seniority": "Seniority"
+				}
+			},
+			"experience": {
+				"title": "Experience",
+				"listItems": [
+					{
+						"company": "Cámara de representantes de la provincia de Misiones",
+						"position": "System Analyst",
+						"duration": "12/2023 - 01/2024",
+						"description": "Maintained and developed information systems based on PHP, JavaScript, MySQL and CSS, with some extensions in Python.",
+						"extra": "Deployed PHP and MySQL environments using Docker containers on Ubuntu-based operating systems."
+					},
+					{
+						"company": "Freelance",
+						"position": "Web Developer",
+						"duration": "01/2024 - Actualidad",
+						"description": "I am currently expanding my knowledge in the JavaScript ecosystem (MongoDB, Express, React, Node.js) and exploring the possibilities of AWS to create scalable cloud applications.",
+						"extra": ""
+					}
+				]
+			},
+			"contact": {
+				"title": "Contact",
+				"parrafo": "Thank you for seening my porfolio, if you are interested in work with me, don't doubt in contacting me...",
+				"iconsLabels": {
+					"whatsapp": "WhatsApp",
+					"linkedin": "LinkedIn",
+					"mail": "Email"
+				},
+				"iconsAlts": {
+					"whatsapp": "WhatsApp Icon",
+					"linkedin": "WhatsApp Icon",
+					"mail": "Email Icon",
+					"react": "React Icon",
+					"astro": "Astro Icon"
+				}
+			}
+		},
+		"footer": {
+			"madeBy": "Made by",
+			"whatsappAlt": "WhatsApp Icon",
+			"linkedinAlt": "LinkedIn Icon",
+			"mailAlt": "Mail Icon"
+		}
+	}
+}

@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import { reverseStandarVariation } from "../../data/animationConfig";
+import { useLanguage } from "../../hooks/useLanguage";
+import { LANGUAGE } from "../../data/consts";
 
 export function AboutMe() {
+	const { language } = useLanguage();
 	return (
 		<motion.article
 			variants={reverseStandarVariation}
-			className="text-rufous flex flex-col"
+			className="text-rich_black-100 dark:text-rufous flex flex-col"
 		>
 			<h2 className="font-bold text-center pt-[2vmax] text-[3vmax] ">
-				ABOUT ME
+				{LANGUAGE[language].sections.about.textCard.title}
 			</h2>
-			<p className="text-[2.2vmax] sm:text-[2.7vmax] md:text-[2.2vmax] lg:text-[2vmax] xl:text-[2.8vmax] 2xl:text-[2.5vmax] p-[1.5vmax] text-rufous-700">
-				I am a passionate web developer that enjoys creating custom and
-				efficient solutions using different technologies. I love learning new
-				technologies and applying them to real-world projects.
+			<p className="text-[2.2vmax] sm:text-[2.7vmax] md:text-[2.2vmax] lg:text-[2vmax] xl:text-[2.8vmax] 2xl:text-[2.5vmax] p-[1.5vmax] text-rich_black-600 dark:text-rufous-700">
+				{LANGUAGE[language].sections.about.textCard.content}
 			</p>
 		</motion.article>
 	);

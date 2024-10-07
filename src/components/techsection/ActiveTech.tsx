@@ -5,9 +5,14 @@ import {
 	reverseStandarVariation,
 	rotate,
 } from "../../data/animationConfig";
+import { useDarkMode } from "../../hooks/useDarkMode";
+import { useLanguage } from "../../hooks/useLanguage";
+import { LANGUAGE } from "../../data/consts";
 
 export function ActiveTech() {
+	const { language } = useLanguage();
 	const tech = useActiveTech((state) => state.activeTech);
+	const { darkModeState } = useDarkMode();
 	return (
 		<motion.div
 			initial="hidden"
@@ -20,15 +25,19 @@ export function ActiveTech() {
 				animate="rotate"
 				variants={tech.animation === "beat" ? beat : rotate}
 				className="w-8/12 h-3/6 md:h-4/6"
-				src={tech.icon}
+				src={darkModeState ? tech.iconDark : tech.icon}
 				alt={tech.name}
 				loading="lazy"
 			/>
-			<h3 className="text-rufous text-3xl md:text-5xl">
-				<span className="text-rufous-700">Name:</span> {tech.name}
+			<h3 className="text-rich_black-100 dark:text-rufous text-3xl md:text-5xl">
+				<span className="text-rich_black-600 dark:text-rufous-700">{LANGUAGE[language].sections.technologies.activeTech.name}:</span>{" "}
+				{tech.name}
 			</h3>
-			<h3 className="text-rufous text-3xl md:text-5xl">
-				<span className="text-rufous-700">Seniority:</span> {tech.seniority}
+			<h3 className="text-rich_black-100 dark:text-rufous text-3xl md:text-5xl">
+				<span className="text-rich_black-600 dark:text-rufous-700">
+				{LANGUAGE[language].sections.technologies.activeTech.seniority}:
+				</span>{" "}
+				{tech.seniority}
 			</h3>
 		</motion.div>
 	);

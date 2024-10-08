@@ -14,12 +14,12 @@
 						"age": "Edad",
 						"nationality": "Nacionalidad",
 						"languages": "Lenguajes",
-						"contact": "Telefono",
+						"contact": "Teléfono",
 						"email": "Email"
 					},
 					"values": {
 						"nacionality": "Argentino",
-						"languages": "Español, Ingles",
+						"languages": "Español, Inglés",
 						"contact": "+54 376 - 4691408",
 						"email": "martin.exequiel.morales@gmail.com"
 					}
@@ -30,7 +30,7 @@
 				}
 			},
 			"technologies": {
-				"title": "Tecnologias",
+				"title": "Tecnologías",
 				"activeTech": {
 					"name": "Nombre",
 					"seniority": "Veteranía"
@@ -47,7 +47,7 @@
 						"extra": "Implementé entornos de PHP y MySQL utilizando contenedores Docker en sistemas operativos basados en Ubuntu."
 					},
 					{
-						"company": "Autonomo",
+						"company": "Autónomo",
 						"position": "Desarrollador Web",
 						"duration": "01/2024 - Actualidad",
 						"description": "Actualmente estoy ampliando mis conocimientos en el ecosistema de JavaScript (MongoDB, Express, React, Node.js) y explorando las posibilidades de AWS para crear aplicaciones en la nube escalables.",

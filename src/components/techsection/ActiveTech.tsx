@@ -25,7 +25,7 @@ export function ActiveTech() {
 				animate="rotate"
 				variants={tech.animation === "beat" ? beat : rotate}
 				className="w-8/12 h-3/6 md:h-4/6"
-				src={darkModeState ? tech.iconDark : tech.icon}
+				src={darkModeState === "dark" ? tech.iconDark : tech.icon}
 				alt={tech.name}
 				loading="lazy"
 			/>

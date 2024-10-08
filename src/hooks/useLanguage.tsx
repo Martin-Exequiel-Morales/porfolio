@@ -1,4 +1,5 @@
 import { useLanguageState } from "../data/store/languageSelection";
+import type { LanguageType } from "../data/types";
 
 export function useLanguage() {
 	const language = useLanguageState((state) => state.language);
@@ -8,5 +9,9 @@ export function useLanguage() {
 		setLanguage(language === "en" ? "es" : "en");
 	};
 
-	return { language, togleLanguage };
+	const setPageLanguage = (language: LanguageType) => {
+		setLanguage(language);
+	};
+
+	return { language, togleLanguage, setPageLanguage };
 }

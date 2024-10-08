@@ -41,3 +41,7 @@ export interface NavLinkProps {
 	link: string;
 	children: string;
 }
+
+export type DarkType = "dark" | "light";
+
+type LanguageType = "en" | "es";

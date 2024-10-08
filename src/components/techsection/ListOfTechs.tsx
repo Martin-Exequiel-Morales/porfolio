@@ -38,7 +38,7 @@ export function ListOfTechs({ techs }: { techs: Tech[] }) {
 					>
 						<img
 							className="w-6 h-6 md:w-8 md:h-8"
-							src={darkModeState ? tech.iconDark : tech.icon}
+							src={darkModeState === "dark" ? tech.iconDark : tech.icon}
 							alt={tech.name}
 							loading="lazy"
 						/>

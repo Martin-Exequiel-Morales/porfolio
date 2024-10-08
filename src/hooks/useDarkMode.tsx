@@ -1,13 +1,17 @@
 import { useDarkState } from "../data/store/darkMode";
+import type { DarkType } from "../data/types";
 
 export function useDarkMode() {
 	const darkModeState = useDarkState((state) => state.darkMode);
 	const setDarkState = useDarkState((state) => state.setDarkMode);
 
 	const toggleDarkMode = () => {
-		document.documentElement.classList.toggle("dark");
-		setDarkState(!darkModeState);
+		setDarkState(darkModeState === "dark" ? "light" : "dark");
 	};
 
-	return { darkModeState, toggleDarkMode };
+	const setDarkMode = (mode: DarkType) => {
+		setDarkState(mode);
+	};
+
+	return { darkModeState, toggleDarkMode, setDarkMode };
 }

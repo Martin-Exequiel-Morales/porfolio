@@ -8,8 +8,12 @@ export function MotionNavLink({ link, children }: NavLinkProps) {
 
 	return (
 		<motion.a
-			onClick={() => {
-				setTimeout(closeNavBar, 600);
+			onClick={(e) => {
+				e.preventDefault();
+				closeNavBar();
+				setTimeout(() => {
+					window.location.href = link;
+				}, 100);
 			}}
 			variants={mobileNavItemVariant}
 			className="w-full select-none flex justify-center items-center h-16 border-t active:scale-150 active:text-rich_black-600 dark:active:text-rufous-700  border-rich_black-100 dark:border-rufous hover:text-rich_black-600 dark:hover:text-rufous-600 hover:text-xl hover:transition-all hover:duration-500 hover:border hover:border-x-rich_black-600 dark:hover:border-x-rufous-600"

@@ -1,13 +1,15 @@
 import { create } from "zustand";
+import type { DarkType } from "../types";
+
 
 interface DarkModeState {
-	darkMode: boolean;
-	setDarkMode: (darkMode: boolean) => void;
+	darkMode: DarkType;
+	setDarkMode: (darkMode: DarkType) => void;
 }
 
 export const useDarkState = create<DarkModeState>((set) => {
 	return {
-		darkMode: true,
+		darkMode: "dark",
 		setDarkMode: (darkMode) => set({ darkMode }),
 	};
 });

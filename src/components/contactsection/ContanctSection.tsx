@@ -43,7 +43,7 @@ export function ContactSection() {
 						initial="initial"
 						animate="rotate"
 						variants={rotate}
-						src={darkModeState ? "/icons/react_dark.svg" : "/icons/react.svg"}
+						src={darkModeState === "dark" ? "/icons/react_dark.svg" : "/icons/react.svg"}
 						loading="lazy"
 						alt={LANGUAGE[language].sections.contact.iconsAlts.react}
 					></motion.img>
@@ -130,7 +130,7 @@ export function ContactSection() {
 					<motion.img
 						animate="rotate"
 						variants={beat}
-						src={darkModeState ? "/icons/astro_dark.svg" : "/icons/astro.svg"}
+						src={darkModeState === "dark" ? "/icons/astro_dark.svg" : "/icons/astro.svg"}
 						loading="lazy"
 						alt={LANGUAGE[language].sections.contact.iconsAlts.astro}
 					></motion.img>

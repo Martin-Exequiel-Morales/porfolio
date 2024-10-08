@@ -22,8 +22,17 @@ export function Initializer() {
 			setPageLanguage("es");
 		}
 
-		document.getElementById("load")?.classList.add("hidden");
-		document.getElementById("content")?.classList.remove("hidden");
+		setTimeout(() => {
+			if (document.readyState === "complete") {
+				document.getElementById("load")?.classList.add("hidden");
+				document.getElementById("content")?.classList.remove("hidden");
+			} else {
+				window.onload = () => {
+					document.getElementById("load")?.classList.add("hidden");
+					document.getElementById("content")?.classList.remove("hidden");
+				};
+			}
+		}, 1000);
 	}, []);
 
 	useEffect(() => {

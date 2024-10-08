@@ -23,16 +23,18 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div id="load" class="bg-gradient-to-tr from-rich_black-100  to-vanilla-700 via-rich_black-500 flex items-center justify-center h-screen w-screen">
-			
+	<body class="bg-gradient-to-r from-rich_black-100 via-vanilla-700 to-rich_black-100">
+		<div
+			id="load"
+			class="bg-[url('/loading.svg')] bg-[length:50%_50%] bg-no-repeat bg-center flex items-center justify-center h-screen w-screen"
+		>
 		</div>
+		<Initializer client:load />
 		<div id="content" class="bg-vanilla dark:bg-rich_black hidden">
 			<Header />
 			<slot />
 			<Footer />
 		</div>
-		<Initializer client:load />
 	</body>
 
 	<style></style>

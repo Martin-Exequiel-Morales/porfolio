@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/locales";
@@ -12,8 +13,25 @@ export function Hero() {
 	return (
 		<section
 			id="inicio"
-			className="min-h-screen flex flex-col justify-center px-6 max-w-4xl mx-auto w-full"
+			className="relative min-h-screen flex flex-col justify-center pt-16 px-6 max-w-4xl mx-auto w-full"
 		>
+			{/* Avatar */}
+			<motion.div
+				className="mb-8"
+				initial={{ opacity: 0, scale: 0.85 }}
+				animate={{ opacity: 1, scale: 1 }}
+				transition={{ duration: 0.5 }}
+			>
+				<Image
+					src="/personal_photo.webp"
+					alt="Martin Morales"
+					width={96}
+					height={96}
+					className="rounded-full border-2 border-border object-cover w-24 h-24"
+					priority
+				/>
+			</motion.div>
+
 			<motion.p
 				className="text-accent font-mono text-sm mb-4"
 				initial={{ opacity: 0, y: 10 }}
@@ -93,6 +111,35 @@ export function Hero() {
 					LinkedIn ↗
 				</a>
 			</motion.div>
+
+			{/* Scroll indicator */}
+			<motion.a
+				href="#sobre-mi"
+				className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted hover:text-foreground transition-colors"
+				initial={{ opacity: 0, y: -6 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					duration: 0.4,
+					delay: 0.8,
+					repeat: Infinity,
+					repeatType: "reverse",
+					repeatDelay: 0.6,
+				}}
+				aria-label="Scroll down"
+			>
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<path d="M12 5v14M5 12l7 7 7-7" />
+				</svg>
+			</motion.a>
 		</section>
 	);
 }

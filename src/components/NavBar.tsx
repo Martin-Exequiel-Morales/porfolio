@@ -78,7 +78,7 @@ export function NavBar() {
 					href="#inicio"
 					className="font-mono text-sm text-accent hover:text-accent-hover transition-colors"
 				>
-					{personal.name.split(" ")[1].toLowerCase()}.dev
+					Martin Morales
 				</a>
 
 				{/* Desktop links */}

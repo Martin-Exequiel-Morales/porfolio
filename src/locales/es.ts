@@ -15,7 +15,7 @@ export const es: Translations = {
 	},
 	about: {
 		title: "Sobre mí",
-		p1: "Soy un desarrollador fullstack con base en Misiones, Argentina. Desde finales de 2021 trabajo en la Cámara de Representantes de la Provincia de Misiones, donde desarrollé sistemas de diversa naturaleza: portales de acceso, herramientas administrativas, interfaces gráficas, minijuegos, calculadoras especializadas y exportadores de datos entre sistemas.",
+		p1: "Soy un desarrollador fullstack con base en Misiones, Argentina. Desde finales de 2021 trabajo en la Cámara de Representantes de la Provincia de Misiones, donde desarrollé sistemas de diversa naturaleza: portales de acceso, herramientas administrativas, cálculos sobre datos con visualización gráfica, minijuegos y exportadores de datos entre sistemas.",
 		p2: "A lo largo de mi carrera adapté mi stack a las necesidades de cada proyecto. Comencé con PHP, JavaScript y Python, y en 2025 propuse e implementé el ecosistema JS moderno —Next.js, TypeScript, Prisma— como estándar para los nuevos desarrollos del área.",
 		p3: "Me motiva crear software que las personas realmente usen y que resuelva problemas concretos. Trabajar con usuarios de distintos niveles técnicos me enseñó a priorizar la usabilidad y la robustez sobre la complejidad innecesaria.",
 		p4: "Actualmente busco expandirme hacia proyectos fuera del sector público: aplicaciones web, tiendas online, SaaS, o cualquier desafío donde pueda aportar valor con código bien escrito.",

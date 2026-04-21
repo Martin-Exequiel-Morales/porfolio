@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://martin-morales-portfolio.vercel.app"),
 	title: "Martin Morales · Full Stack Developer",
 	description:
 		"Portfolio de Martin Exequiel Morales, Analista de Sistemas y Full Stack Developer con experiencia en PHP y ecosistema JS moderno (Next.js, React, TypeScript).",

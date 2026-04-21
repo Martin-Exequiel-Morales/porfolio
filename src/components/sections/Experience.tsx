@@ -39,12 +39,12 @@ export function Experience() {
 							>
 								<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-accent translate-x-[-3.5px] hidden sm:block" />
 
-								<div className="rounded-xl border border-border bg-surface p-6 hover:border-accent/40 transition-colors">
+								<div className="card-surface rounded-xl border border-border bg-surface p-6 hover:border-accent/40 transition-colors">
 									<div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
 										<h3 className="font-semibold text-foreground text-lg">
 											{item.role[lang]}
 										</h3>
-										<span className="text-accent font-mono text-xs shrink-0 mt-1">
+										<span className="text-accent/80 light:text-muted font-mono text-xs shrink-0 mt-1">
 											{item.period[lang]}
 										</span>
 									</div>

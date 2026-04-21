@@ -27,13 +27,13 @@ export function TechStack() {
 					{techs.map((group, index) => (
 						<motion.div
 							key={group.category.en}
-							className="rounded-xl border border-border bg-surface p-6"
+							className="card-surface rounded-xl border border-border bg-surface p-6"
 							initial={{ opacity: 0, y: 10 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.3, delay: index * 0.08 }}
 							viewport={{ once: true }}
 						>
-							<h3 className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">
+							<h3 className="text-xs font-semibold text-accent light:text-muted uppercase tracking-widest mb-4">
 								{group.category[lang]}
 							</h3>
 							<div className="flex flex-wrap gap-2">

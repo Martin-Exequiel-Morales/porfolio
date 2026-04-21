@@ -20,7 +20,7 @@ export function Contact() {
 			>
 				<SectionTitle title={t.contact.title} subtitle={t.contact.subtitle} />
 
-				<div className="rounded-xl border border-border bg-surface p-8 max-w-lg">
+				<div className="card-surface rounded-xl border border-border bg-surface p-8 max-w-lg">
 					<p className="text-muted text-sm leading-relaxed mb-8">
 						{t.contact.description}
 					</p>
@@ -30,7 +30,9 @@ export function Contact() {
 							href={`mailto:${personal.email}`}
 							className="flex items-center gap-3 group"
 						>
-							<span className="text-accent text-sm font-mono">01.</span>
+							<span className="text-accent light:text-muted text-sm font-mono">
+								01.
+							</span>
 							<span className="text-foreground text-sm group-hover:text-accent transition-colors">
 								{personal.email}
 							</span>
@@ -42,7 +44,9 @@ export function Contact() {
 							rel="noopener noreferrer"
 							className="flex items-center gap-3 group"
 						>
-							<span className="text-accent text-sm font-mono">02.</span>
+							<span className="text-accent light:text-muted text-sm font-mono">
+								02.
+							</span>
 							<span className="text-foreground text-sm group-hover:text-accent transition-colors">
 								LinkedIn ↗
 							</span>
@@ -54,7 +58,9 @@ export function Contact() {
 							rel="noopener noreferrer"
 							className="flex items-center gap-3 group"
 						>
-							<span className="text-accent text-sm font-mono">03.</span>
+							<span className="text-accent light:text-muted text-sm font-mono">
+								03.
+							</span>
 							<span className="text-foreground text-sm group-hover:text-accent transition-colors">
 								GitHub ↗
 							</span>

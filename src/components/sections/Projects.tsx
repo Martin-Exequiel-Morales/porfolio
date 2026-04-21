@@ -25,7 +25,7 @@ export function Projects() {
 					{projects.map((project, index) => (
 						<motion.div
 							key={project.title.en}
-							className="rounded-xl border border-border bg-surface p-6 hover:border-accent/40 transition-colors"
+							className="card-surface rounded-xl border border-border bg-surface p-6 hover:border-accent/40 transition-colors"
 							initial={{ opacity: 0, y: 10 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.4, delay: index * 0.08 }}

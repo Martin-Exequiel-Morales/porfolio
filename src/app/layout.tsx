@@ -28,6 +28,7 @@ export default function RootLayout({
 		<html
 			lang="es"
 			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+			suppressHydrationWarning
 		>
 			<head>
 				{/* Anti-flash: apply saved theme before React hydrates */}

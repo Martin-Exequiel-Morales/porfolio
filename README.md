@@ -48,3 +48,21 @@ Open [http://localhost:3000](http://localhost:3000).
 npm run build
 npm start
 ```
+
+## Deploy
+
+Hosted on [Vercel](https://vercel.com). To deploy your own instance:
+
+**Option A — Vercel Dashboard (recommended)**
+
+1. Go to [vercel.com/new](https://vercel.com/new) and import the GitHub repo.
+2. Set the **Production Branch** to `v2-next` (or `main` after merging).
+3. Framework preset is detected automatically as **Next.js** — no extra config needed.
+4. Click **Deploy**.
+
+**Option B — Vercel CLI**
+
+```bash
+npx vercel        # preview deploy
+npx vercel --prod # production deploy
+```

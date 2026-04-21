@@ -20,14 +20,26 @@ export function About() {
 				<SectionTitle title={t.about.title} />
 
 				<div className="grid sm:grid-cols-2 gap-10 text-muted leading-relaxed">
-					<div className="space-y-4">
+					<motion.div
+						className="space-y-4"
+						initial={{ opacity: 0, x: -16 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.5, delay: 0.1 }}
+						viewport={{ once: true }}
+					>
 						<p>{t.about.p1}</p>
 						<p>{t.about.p2}</p>
-					</div>
-					<div className="space-y-4">
+					</motion.div>
+					<motion.div
+						className="space-y-4"
+						initial={{ opacity: 0, x: 16 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.5, delay: 0.2 }}
+						viewport={{ once: true }}
+					>
 						<p>{t.about.p3}</p>
 						<p>{t.about.p4}</p>
-					</div>
+					</motion.div>
 				</div>
 			</motion.div>
 		</section>

@@ -30,6 +30,7 @@ export function TechStack() {
 							className="card-surface rounded-xl border border-border bg-surface p-6"
 							initial={{ opacity: 0, y: 10 }}
 							whileInView={{ opacity: 1, y: 0 }}
+							whileHover={{ y: -2, transition: { duration: 0.2 } }}
 							transition={{ duration: 0.3, delay: index * 0.08 }}
 							viewport={{ once: true }}
 						>

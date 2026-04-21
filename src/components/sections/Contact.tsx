@@ -26,45 +26,45 @@ export function Contact() {
 					</p>
 
 					<div className="space-y-4">
-						<a
-							href={`mailto:${personal.email}`}
-							className="flex items-center gap-3 group"
-						>
-							<span className="text-accent light:text-muted text-sm font-mono">
-								01.
-							</span>
-							<span className="text-foreground text-sm group-hover:text-accent transition-colors">
-								{personal.email}
-							</span>
-						</a>
-
-						<a
-							href={personal.linkedin}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="flex items-center gap-3 group"
-						>
-							<span className="text-accent light:text-muted text-sm font-mono">
-								02.
-							</span>
-							<span className="text-foreground text-sm group-hover:text-accent transition-colors">
-								LinkedIn ↗
-							</span>
-						</a>
-
-						<a
-							href={personal.github}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="flex items-center gap-3 group"
-						>
-							<span className="text-accent light:text-muted text-sm font-mono">
-								03.
-							</span>
-							<span className="text-foreground text-sm group-hover:text-accent transition-colors">
-								GitHub ↗
-							</span>
-						</a>
+						{[
+							{
+								href: `mailto:${personal.email}`,
+								label: personal.email,
+								num: "01.",
+							},
+							{
+								href: personal.linkedin,
+								label: "LinkedIn ↗",
+								num: "02.",
+								external: true,
+							},
+							{
+								href: personal.github,
+								label: "GitHub ↗",
+								num: "03.",
+								external: true,
+							},
+						].map((link, i) => (
+							<motion.a
+								key={link.num}
+								href={link.href}
+								{...(link.external
+									? { target: "_blank", rel: "noopener noreferrer" }
+									: {})}
+								className="flex items-center gap-3 group"
+								initial={{ opacity: 0, x: -10 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.3, delay: 0.2 + i * 0.1 }}
+								viewport={{ once: true }}
+							>
+								<span className="text-accent light:text-muted text-sm font-mono">
+									{link.num}
+								</span>
+								<span className="text-foreground text-sm group-hover:text-accent transition-colors">
+									{link.label}
+								</span>
+							</motion.a>
+						))}
 					</div>
 				</div>
 			</motion.div>

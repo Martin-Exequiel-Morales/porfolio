@@ -39,7 +39,10 @@ export function Experience() {
 							>
 								<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-accent translate-x-[-3.5px] hidden sm:block" />
 
-								<div className="card-surface rounded-xl border border-border bg-surface p-6 hover:border-accent/40 transition-colors">
+								<motion.div
+									className="card-surface rounded-xl border border-border bg-surface p-6 hover:border-accent/40 transition-colors"
+									whileHover={{ y: -2, transition: { duration: 0.2 } }}
+								>
 									<div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
 										<h3 className="font-semibold text-foreground text-lg">
 											{item.role[lang]}
@@ -60,7 +63,7 @@ export function Experience() {
 											<Badge key={tech} label={tech} />
 										))}
 									</div>
-								</div>
+								</motion.div>
 							</motion.div>
 						))}
 					</div>

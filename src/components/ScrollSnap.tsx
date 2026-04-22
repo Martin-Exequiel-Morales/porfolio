@@ -99,12 +99,17 @@ export function ScrollSnap() {
 
 		/** Max scrollY that keeps this section (+ footer for last) fully visible */
 		function sectionBottomScrollY(sec: HTMLElement, isLast: boolean): number {
-			let h = sec.offsetHeight;
 			if (isLast) {
 				const footer = document.querySelector("footer");
-				if (footer) h += footer.offsetHeight;
+				if (footer) {
+					// Use footer's actual offsetTop so margins/gaps between section and footer are accounted for
+					return Math.max(
+						0,
+						footer.offsetTop + footer.offsetHeight - window.innerHeight,
+					);
+				}
 			}
-			return Math.max(0, secTopY(sec) + h - availH());
+			return Math.max(0, secTopY(sec) + sec.offsetHeight - availH());
 		}
 
 		/** Convert WheelEvent delta to pixels regardless of deltaMode */
@@ -182,9 +187,11 @@ export function ScrollSnap() {
 		// ── Wheel ─────────────────────────────────────────────────────────
 
 		function onWheel(e: WheelEvent) {
-			// During animation: block native scroll; allow direction reversal only
+			// Always take full control — no native scroll ever
+			e.preventDefault();
+
+			// During animation: allow direction reversal only
 			if (a.active) {
-				e.preventDefault();
 				const dir: 1 | -1 = e.deltaY > 0 ? 1 : -1;
 				if (dir !== a.direction) snapTo(a.fromIndex);
 				return;
@@ -200,14 +207,11 @@ export function ScrollSnap() {
 				i.wheelBusy = false;
 				i.wheelIdleTimer = null;
 				i.snapFiredInGesture = false;
-				// boundaryLocked intentionally persists — it fires on the NEXT gesture
+				// boundaryLocked intentionally persists — fires on the NEXT gesture
 			}, WHEEL_IDLE_MS);
 
 			// Post-snap cooldown
-			if (performance.now() - a.completedAt < POST_SNAP_COOLDOWN_MS) {
-				e.preventDefault();
-				return;
-			}
+			if (performance.now() - a.completedAt < POST_SNAP_COOLDOWN_MS) return;
 
 			const secs = getSections();
 			const idx = currentIndex();
@@ -216,7 +220,6 @@ export function ScrollSnap() {
 
 			// ── Small section: one snap per gesture ──────────────────────
 			if (fitsInView(sec)) {
-				e.preventDefault();
 				if (!i.snapFiredInGesture) {
 					i.snapFiredInGesture = true;
 					snapTo(idx + dir);
@@ -224,13 +227,14 @@ export function ScrollSnap() {
 				return;
 			}
 
-			// ── Large section ─────────────────────────────────────────────
+			// ── Large section: we manage all scrolling manually ───────────
 			const isLast = idx === secs.length - 1;
 			const topY = secTopY(sec);
 			const bottomY = sectionBottomScrollY(sec, isLast);
+			const curY = window.scrollY;
 			const px = deltaPx(e);
 
-			// New gesture + boundary was locked in this direction → fire snap
+			// New gesture with active lock in same direction → snap
 			if (
 				isNewGesture &&
 				i.boundaryLocked &&
@@ -238,40 +242,36 @@ export function ScrollSnap() {
 				i.boundaryIdx === idx &&
 				!i.snapFiredInGesture
 			) {
-				e.preventDefault();
 				i.snapFiredInGesture = true;
 				snapTo(idx + dir);
 				return;
 			}
 
-			// Direction reversal cancels the boundary lock
-			if (i.boundaryLocked && i.boundaryIdx === idx && i.boundaryDir !== dir) {
-				i.boundaryLocked = false;
-				i.boundaryDir = 0;
-			}
+			// Clamp scroll to section bounds and apply manually
+			const newY = Math.max(topY, Math.min(bottomY, curY + px));
+			window.scrollTo(0, newY);
 
-			// Scrolling down: clamp at bottom boundary
-			if (dir === 1 && window.scrollY + px >= bottomY - BOUNDARY_TOL) {
-				e.preventDefault();
-				// Scroll exactly to the boundary (absorbs overshoot)
-				if (window.scrollY < bottomY) window.scrollTo(0, bottomY);
+			// Hit the bottom boundary → lock
+			if (dir === 1 && newY >= bottomY - BOUNDARY_TOL) {
 				i.boundaryLocked = true;
 				i.boundaryDir = 1;
 				i.boundaryIdx = idx;
 				return;
 			}
 
-			// Scrolling up: clamp at top boundary
-			if (dir === -1 && window.scrollY + px <= topY + BOUNDARY_TOL) {
-				e.preventDefault();
-				if (window.scrollY > topY) window.scrollTo(0, topY);
+			// Hit the top boundary → lock
+			if (dir === -1 && newY <= topY + BOUNDARY_TOL) {
 				i.boundaryLocked = true;
 				i.boundaryDir = -1;
 				i.boundaryIdx = idx;
 				return;
 			}
 
-			// Freely scrolling inside the section — allow native scroll
+			// Freely scrolling inside the section — cancel any stale lock
+			if (i.boundaryLocked && i.boundaryIdx === idx) {
+				i.boundaryLocked = false;
+				i.boundaryDir = 0;
+			}
 		}
 
 		// ── Keyboard ──────────────────────────────────────────────────────

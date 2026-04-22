@@ -1,16 +1,17 @@
 import { ImageResponse } from "next/og";
-import { readFileSync } from "fs";
-import { join } from "path";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt = "Martín Morales · Full Stack Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OGImage() {
-	const imageBuffer = readFileSync(
+export default async function OGImage() {
+	const photoData = await readFile(
 		join(process.cwd(), "public/personal_photo.webp"),
+		"base64",
 	);
-	const photoSrc = `data:image/webp;base64,${imageBuffer.toString("base64")}`;
+	const photoSrc = `data:image/webp;base64,${photoData}`;
 
 	return new ImageResponse(
 		<div

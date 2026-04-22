@@ -1,17 +1,19 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import sharp from "sharp";
 
 export const alt = "Martín Morales · Full Stack Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OGImage() {
-	const photoData = await readFile(
+	// @vercel/og (Satori) does not support image/webp — convert to JPEG first
+	const rawBuffer = await readFile(
 		join(process.cwd(), "public/personal_photo.webp"),
-		"base64",
 	);
-	const photoSrc = `data:image/webp;base64,${photoData}`;
+	const jpegBuffer = await sharp(rawBuffer).jpeg({ quality: 85 }).toBuffer();
+	const photoSrc = `data:image/jpeg;base64,${jpegBuffer.toString("base64")}`;
 
 	return new ImageResponse(
 		<div

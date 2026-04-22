@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import {
 	motion,
 	useInView,
@@ -8,7 +8,6 @@ import {
 	useTransform,
 	animate,
 } from "motion/react";
-import { useEffect } from "react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/locales";

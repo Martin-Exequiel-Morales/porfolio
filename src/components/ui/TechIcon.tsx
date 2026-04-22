@@ -20,7 +20,6 @@ import {
 	siDbeaver,
 	siVscodium,
 	siArduino,
-	siLinux,
 } from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
@@ -43,7 +42,6 @@ const iconMap: Record<string, SimpleIcon> = {
 	Git: siGit,
 	Jest: siJest,
 	"Linux (Pop OS)": siPopos,
-	Linux: siLinux,
 	DBeaver: siDbeaver,
 	"VS Code": siVscodium,
 	Arduino: siArduino,

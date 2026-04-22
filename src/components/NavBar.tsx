@@ -78,7 +78,7 @@ export function NavBar() {
 					href="#inicio"
 					className="font-mono text-sm text-accent hover:text-accent-hover transition-colors"
 				>
-					Martin Morales
+					Martín Morales
 				</a>
 
 				{/* Desktop links */}

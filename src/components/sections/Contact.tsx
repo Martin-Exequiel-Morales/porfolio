@@ -11,7 +11,7 @@ export function Contact() {
 	const t = translations[lang];
 
 	return (
-		<section id="contacto" className="py-24 px-6 max-w-4xl mx-auto w-full">
+		<section id="contacto" className="py-16 px-6 max-w-4xl mx-auto w-full">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}

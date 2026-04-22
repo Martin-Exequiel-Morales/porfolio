@@ -24,7 +24,7 @@ export function Hero() {
 			>
 				<Image
 					src="/personal_photo.webp"
-					alt="Martin Morales"
+					alt="Martín Morales"
 					width={96}
 					height={96}
 					className="rounded-full border-2 border-border object-cover w-24 h-24"
@@ -115,7 +115,7 @@ export function Hero() {
 			{/* Scroll indicator */}
 			<motion.a
 				href="#sobre-mi"
-				className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted hover:text-foreground transition-colors"
+				className="hidden sm:flex absolute bottom-10 left-1/2 -translate-x-1/2 text-muted hover:text-foreground transition-colors"
 				initial={{ opacity: 0, y: -6 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{

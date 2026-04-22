@@ -18,20 +18,20 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: "/",
 	},
-	title: "Martin Morales · Full Stack Developer",
+	title: "Martín Morales · Full Stack Developer",
 	description:
-		"Portfolio de Martin Exequiel Morales, Analista de Sistemas y Full Stack Developer con experiencia en PHP y ecosistema JS moderno (Next.js, React, TypeScript).",
+		"Portfolio de Martín Exequiel Morales, Analista de Sistemas y Full Stack Developer con experiencia en PHP y ecosistema JS moderno (Next.js, React, TypeScript).",
 	openGraph: {
 		type: "website",
-		title: "Martin Morales · Full Stack Developer",
+		title: "Martín Morales · Full Stack Developer",
 		description:
-			"Portfolio de Martin Exequiel Morales, Analista de Sistemas y Full Stack Developer con experiencia en Next.js, React, TypeScript y más.",
+			"Portfolio de Martín Exequiel Morales, Analista de Sistemas y Full Stack Developer con experiencia en Next.js, React, TypeScript y más.",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Martin Morales · Full Stack Developer",
+		title: "Martín Morales · Full Stack Developer",
 		description:
-			"Portfolio de Martin Exequiel Morales, Analista de Sistemas y Full Stack Developer.",
+			"Portfolio de Martín Exequiel Morales, Analista de Sistemas y Full Stack Developer.",
 	},
 };
 

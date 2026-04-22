@@ -1,7 +1,7 @@
 import type { Bilingual } from "@/locales/types";
 
 export const personal = {
-	name: "Martin Exequiel Morales",
+	name: "Martín Exequiel Morales",
 	role: {
 		es: "Analista de Sistemas · Full Stack Developer",
 		en: "Systems Analyst · Full Stack Developer",

@@ -1,4 +1,4 @@
-# Martin Morales · Portfolio
+# Martín Morales · Portfolio
 
 Personal portfolio website built with Next.js, TypeScript, Tailwind CSS v4, and Motion.
 

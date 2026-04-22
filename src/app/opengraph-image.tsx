@@ -1,11 +1,17 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 
-export const runtime = "edge";
 export const alt = "Martín Morales · Full Stack Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OGImage() {
+	const imageBuffer = readFileSync(
+		join(process.cwd(), "public/personal_photo.webp"),
+	);
+	const photoSrc = `data:image/webp;base64,${imageBuffer.toString("base64")}`;
+
 	return new ImageResponse(
 		<div
 			style={{
@@ -69,31 +75,19 @@ export default function OGImage() {
 				/>
 			</div>
 
-			{/* Right: monogram */}
-			<div
+			{/* Right: photo */}
+			{/* eslint-disable-next-line @next/next/no-img-element */}
+			<img
+				src={photoSrc}
+				width={220}
+				height={220}
 				style={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					width: "200px",
-					height: "200px",
 					borderRadius: "50%",
-					border: "2px solid #2a2a2e",
-					backgroundColor: "#141416",
+					border: "3px solid #6366f1",
+					objectFit: "cover",
 				}}
-			>
-				<span
-					style={{
-						fontSize: "100px",
-						fontWeight: 700,
-						color: "#f0f0f0",
-						fontFamily: "serif",
-						lineHeight: 1,
-					}}
-				>
-					M
-				</span>
-			</div>
+				alt=""
+			/>
 		</div>,
 		size,
 	);

@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { TechIcon } from "@/components/ui/TechIcon";
 import { techs } from "@/data/techs";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/locales";
@@ -34,15 +35,16 @@ export function TechStack() {
 							transition={{ duration: 0.3, delay: index * 0.08 }}
 							viewport={{ once: true }}
 						>
-							<h3 className="text-xs font-semibold text-accent light:text-muted uppercase tracking-widest mb-4">
+							<h3 className="text-sm font-semibold text-accent light:text-muted uppercase tracking-widest mb-4">
 								{group.category[lang]}
 							</h3>
 							<div className="flex flex-wrap gap-2">
 								{group.items.map((item) => (
 									<span
 										key={item}
-										className="px-3 py-1.5 text-sm rounded-lg bg-surface-2 text-foreground border border-border hover:border-accent/50 hover:text-accent transition-colors"
+										className="flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-lg bg-surface-2 text-foreground border border-border hover:border-accent/50 hover:text-accent transition-colors"
 									>
+										<TechIcon name={item} />
 										{item}
 									</span>
 								))}

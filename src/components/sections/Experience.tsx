@@ -39,6 +39,14 @@ export function Experience() {
 							>
 								<div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-accent translate-x-[-3.5px] hidden sm:block" />
 
+								{/* Mobile period indicator */}
+								<div className="flex items-center gap-2 mb-3 sm:hidden">
+									<div className="w-2 h-2 rounded-full bg-accent shrink-0" />
+									<span className="text-accent font-mono text-xs">
+										{item.period[lang]}
+									</span>
+								</div>
+
 								<motion.div
 									className="card-surface rounded-xl border border-border bg-surface p-6 hover:border-accent/40 transition-colors"
 									whileHover={{ y: -2, transition: { duration: 0.2 } }}
@@ -47,7 +55,7 @@ export function Experience() {
 										<h3 className="font-semibold text-foreground text-lg">
 											{item.role[lang]}
 										</h3>
-										<span className="text-accent/80 light:text-muted font-mono text-xs shrink-0 mt-1">
+										<span className="text-accent/80 light:text-muted font-mono text-xs shrink-0 mt-1 hidden sm:block">
 											{item.period[lang]}
 										</span>
 									</div>

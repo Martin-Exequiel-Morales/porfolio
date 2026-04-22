@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect } from "react";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/locales";
 import { personal } from "@/data/personal";
@@ -9,12 +10,28 @@ import { personal } from "@/data/personal";
 export function Hero() {
 	const { lang } = useLang();
 	const t = translations[lang];
+	// Cursor stays visible until the name has animated in (delay 0.1 + duration 0.4 = ~600ms)
+	const [showCursor, setShowCursor] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => setShowCursor(false), 1200);
+		return () => clearTimeout(timer);
+	}, []);
 
 	return (
 		<section
 			id="inicio"
 			className="relative min-h-screen flex flex-col justify-center pt-16 px-6 max-w-4xl mx-auto w-full"
 		>
+			{/* Background gradient */}
+			<div
+				aria-hidden="true"
+				className="pointer-events-none absolute inset-0 overflow-hidden"
+				style={{
+					background:
+						"radial-gradient(ellipse 80% 40% at 50% -10%, rgba(99,102,241,0.11), transparent)",
+				}}
+			/>
 			{/* Avatar */}
 			<motion.div
 				className="mb-8"
@@ -33,12 +50,26 @@ export function Hero() {
 			</motion.div>
 
 			<motion.p
-				className="text-accent font-mono text-sm mb-4"
+				className="text-accent font-mono text-sm mb-4 flex items-center gap-0"
 				initial={{ opacity: 0, y: 10 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.4 }}
 			>
 				{t.hero.greeting}
+				<AnimatePresence>
+					{showCursor && (
+						<motion.span
+							key="cursor"
+							initial={{ opacity: 1 }}
+							animate={{ opacity: [1, 0, 1] }}
+							exit={{ opacity: 0, transition: { duration: 0.2 } }}
+							transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+							className="ml-0.5 inline-block"
+						>
+							|
+						</motion.span>
+					)}
+				</AnimatePresence>
 			</motion.p>
 
 			<motion.h1

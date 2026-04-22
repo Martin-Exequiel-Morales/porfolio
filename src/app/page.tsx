@@ -6,10 +6,12 @@ import { Experience } from "@/components/sections/Experience";
 import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
+import { ScrollSnap } from "@/components/ScrollSnap";
 
 export default function Home() {
 	return (
 		<>
+			<ScrollSnap />
 			<NavBar />
 			<main className="flex flex-col items-center">
 				<Hero />

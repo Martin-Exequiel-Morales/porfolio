@@ -15,8 +15,8 @@ export const es: Translations = {
 	},
 	about: {
 		title: "Sobre mí",
-		p1: "Soy desarrollador fullstack con base en Misiones, Argentina. Llevo más de 4 años en la Cámara de Representantes construyendo sistemas de uso real: portales de acceso, herramientas administrativas, dashboards interactivos y exportadores de datos entre sistemas.",
-		p2: "Empecé con PHP, JavaScript y Python. En 2025 propuse e implementé el ecosistema JS moderno —Next.js, TypeScript, Prisma— como nuevo estándar para el área.",
+		p1: "Soy desarrollador fullstack. Llevo más de 4 años en la Cámara de Representantes construyendo sistemas de uso real: portales de acceso, herramientas administrativas, dashboards interactivos y exportadores de datos entre sistemas.",
+		p2: "Empecé con PHP, JavaScript y Python. En 2025 promoví e implementé el ecosistema JS moderno —Next.js, TypeScript, Prisma— como nuevo estándar para el área, y asumí el rol de Tech Lead: asigno tareas, establezco prioridades y acompaño al equipo en el día a día.",
 		p3: "Me motiva el software que la gente usa de verdad. Años de trabajo con usuarios de distintos niveles técnicos me enseñaron a priorizar la usabilidad sobre la complejidad.",
 		p4: "Busco expandirme fuera del sector público: aplicaciones web, tiendas online, SaaS, o cualquier producto digital donde pueda aportar valor con código bien escrito.",
 	},

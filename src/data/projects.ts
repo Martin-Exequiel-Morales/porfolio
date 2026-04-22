@@ -10,7 +10,7 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
-		title: { es: "Portal Institucional", en: "Institutional Portal" },
+		title: { es: "Portal Institucional", en: "Portal Institucional" },
 		status: "in-progress",
 		description: {
 			es: "Sistema de acceso unificado para los usuarios de la Cámara de Representantes. Centraliza el acceso a todos los sistemas internos en un único punto de entrada autenticado. Pendiente: integración de un chatbot con modelo de IA ejecutable en servidores internos.",
@@ -50,8 +50,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: {
-			es: "Gestor de Tareas Institucional",
-			en: "Institutional Task Manager",
+			es: "G.E.S.T.O.R",
+			en: "G.E.S.T.O.R",
 		},
 		status: "in-progress",
 		description: {

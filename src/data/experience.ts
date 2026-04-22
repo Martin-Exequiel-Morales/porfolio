@@ -12,13 +12,13 @@ export const experience: ExperienceItem[] = [
 	{
 		company: "Cámara de Representantes de la Provincia de Misiones",
 		role: {
-			es: "Analista de Sistemas · Full Stack Developer",
-			en: "Systems Analyst · Full Stack Developer",
+			es: "Tech Lead · Full Stack Developer",
+			en: "Tech Lead · Full Stack Developer",
 		},
 		period: { es: "2025 – Presente", en: "2025 – Present" },
 		description: {
-			es: "Lideré la adopción del ecosistema JavaScript moderno como estándar para nuevos desarrollos del área. Diseñé y desarrollé el Portal Institucional: sistema de acceso unificado con autenticación por DNI, validación de permisos por sistema mediante adaptadores independientes y módulos de redirecciones, documentos y tutoriales. Actualmente en desarrollo: un gestor de tareas con vistas Kanban y calendario, con un módulo integrado de medición de calidad de software basado en métricas de QA.",
-			en: "Led the adoption of the modern JavaScript ecosystem as the standard for new area developments. Designed and developed the Institutional Portal: a unified access system with DNI-based authentication, per-system permission validation through independent adapters, and modules for redirects, documents, and tutorials. Currently in development: a task manager with Kanban views and calendar, including an integrated software quality measurement module based on QA metrics.",
+			es: "Dirijo el equipo de desarrollo del área: asigno tareas, determino prioridades, establezco plazos y brindo feedback continuo al equipo. Lideré la adopción del ecosistema JavaScript moderno como estándar para nuevos desarrollos. Diseñé y desarrollé el Portal Institucional: sistema de acceso unificado con autenticación por DNI, validación de permisos por sistema mediante adaptadores independientes y módulos de redirecciones, documentos y tutoriales. Actualmente en desarrollo: un gestor de tareas con vistas Kanban y calendario, con un módulo integrado de medición de calidad de software basado en métricas de QA.",
+			en: "Lead the area\u2019s development team: assign tasks, set priorities, establish deadlines, and provide ongoing feedback. Led the adoption of the modern JavaScript ecosystem as the standard for new area developments. Designed and developed the Institutional Portal: a unified access system with DNI-based authentication, per-system permission validation through independent adapters, and modules for redirects, documents, and tutorials. Currently in development: a task manager with Kanban views and calendar, including an integrated software quality measurement module based on QA metrics.",
 		},
 		tech: [
 			"Next.js",
@@ -39,8 +39,8 @@ export const experience: ExperienceItem[] = [
 	{
 		company: "Cámara de Representantes de la Provincia de Misiones",
 		role: {
-			es: "Analista de Sistemas · Desarrollador Web",
-			en: "Systems Analyst · Web Developer",
+			es: "Desarrollador Web",
+			en: "Web Developer",
 		},
 		period: { es: "2021 – 2023", en: "2021 – 2023" },
 		description: {

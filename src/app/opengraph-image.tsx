@@ -63,7 +63,7 @@ export default async function OGImage() {
 						fontWeight: 400,
 					}}
 				>
-					Systems Analyst · Full Stack Developer
+					Tech Lead · Full Stack Developer
 				</span>
 
 				{/* Accent line */}

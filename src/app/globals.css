@@ -49,14 +49,20 @@
 	border-color: transparent;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
 body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Each section is at least one viewport tall (minus navbar) so two sections are never visible simultaneously */
+#inicio,
+#sobre-mi,
+#experiencia,
+#tecnologias,
+#proyectos,
+#contacto {
+	min-height: calc(100dvh - 64px);
 }
 
 ::selection {

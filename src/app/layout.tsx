@@ -26,21 +26,12 @@ export const metadata: Metadata = {
 		title: "Martin Morales · Full Stack Developer",
 		description:
 			"Portfolio de Martin Exequiel Morales, Analista de Sistemas y Full Stack Developer con experiencia en Next.js, React, TypeScript y más.",
-		images: [
-			{
-				url: "/personal_photo.webp",
-				width: 400,
-				height: 400,
-				alt: "Martin Morales",
-			},
-		],
 	},
 	twitter: {
-		card: "summary",
+		card: "summary_large_image",
 		title: "Martin Morales · Full Stack Developer",
 		description:
 			"Portfolio de Martin Exequiel Morales, Analista de Sistemas y Full Stack Developer.",
-		images: ["/personal_photo.webp"],
 	},
 };
 

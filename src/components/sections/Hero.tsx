@@ -1,11 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect } from "react";
+import {
+	motion,
+	AnimatePresence,
+	useScroll,
+	useTransform,
+} from "motion/react";
+import { useState, useEffect, useRef } from "react";
 import { useLang } from "@/contexts/LanguageContext";
 import { translations } from "@/locales";
 import { personal } from "@/data/personal";
+import { useMagnetic } from "@/hooks/useMagnetic";
 
 export function Hero() {
 	const { lang } = useLang();
@@ -18,16 +24,34 @@ export function Hero() {
 		return () => clearTimeout(timer);
 	}, []);
 
+	// Parallax: as the user scrolls past the hero, its background gradient
+	// trails behind the foreground content, giving a subtle sense of depth.
+	const sectionRef = useRef<HTMLElement>(null);
+	const { scrollYProgress } = useScroll({
+		target: sectionRef,
+		offset: ["start start", "end start"],
+	});
+	const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+	const bgOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+
+	// Magnetic CTAs (desktop only — the hook auto-disables on touch and
+	// when the user prefers reduced motion).
+	const projectsCta = useMagnetic<HTMLAnchorElement>();
+	const contactCta = useMagnetic<HTMLAnchorElement>();
+
 	return (
 		<section
+			ref={sectionRef}
 			id="inicio"
 			className="relative min-h-screen flex flex-col justify-center pt-16 px-6 max-w-4xl mx-auto w-full"
 		>
-			{/* Background gradient */}
-			<div
+			{/* Background gradient with parallax */}
+			<motion.div
 				aria-hidden="true"
 				className="pointer-events-none absolute inset-0 overflow-hidden"
 				style={{
+					y: bgY,
+					opacity: bgOpacity,
 					background:
 						"radial-gradient(ellipse 80% 40% at 50% -10%, rgba(99,102,241,0.11), transparent)",
 				}}
@@ -105,18 +129,22 @@ export function Hero() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.4, delay: 0.4 }}
 			>
-				<a
+				<motion.a
+					ref={projectsCta.ref}
 					href="#proyectos"
+					style={{ x: projectsCta.x, y: projectsCta.y }}
 					className="px-6 py-3 rounded-lg bg-accent text-white font-medium text-sm hover:bg-accent-hover transition-colors"
 				>
 					{t.hero.ctaProjects}
-				</a>
-				<a
+				</motion.a>
+				<motion.a
+					ref={contactCta.ref}
 					href="#contacto"
+					style={{ x: contactCta.x, y: contactCta.y }}
 					className="px-6 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:border-accent hover:text-accent transition-colors"
 				>
 					{t.hero.ctaContact}
-				</a>
+				</motion.a>
 			</motion.div>
 
 			<motion.div

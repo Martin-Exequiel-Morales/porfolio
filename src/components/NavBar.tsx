@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { personal } from "@/data/personal";
 import { useLang } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { translations } from "@/locales";
+import { SECTION_IDS, NAV_HEIGHT, type SectionId } from "@/lib/sections";
 
 function SunIcon() {
 	return (
@@ -44,19 +44,66 @@ function MoonIcon() {
 	);
 }
 
+/**
+ * Returns the id of the section the user is "currently reading", inferred
+ * from the geometry of the section blocks relative to a reference line a
+ * little below the navbar.
+ *
+ * Uses a scroll listener (passive) instead of `IntersectionObserver` because
+ * we want a single source of truth ("which section's top has crossed the
+ * line"), which is easier to reason about than picking the most-visible
+ * entry from a set of overlapping observers — especially during smooth
+ * anchor scrolls where multiple sections briefly intersect at once.
+ */
+function useActiveSection(): SectionId {
+	const [active, setActive] = useState<SectionId>(SECTION_IDS[0]);
+
+	useEffect(() => {
+		const update = () => {
+			// Reference line: a bit below the navbar so a section is "active"
+			// only once its top has visually entered the reading area.
+			const probe = window.scrollY + NAV_HEIGHT + 40;
+			let current: SectionId = SECTION_IDS[0];
+			for (const id of SECTION_IDS) {
+				const el = document.getElementById(id);
+				if (el && el.offsetTop <= probe) current = id;
+				else break;
+			}
+			// Last-section guard: when the user hits the bottom of the page,
+			// snap to the final section even if its top is still below the
+			// probe line (short pages, big footer, etc.).
+			const atBottom =
+				window.innerHeight + window.scrollY >=
+				document.documentElement.scrollHeight - 4;
+			if (atBottom) current = SECTION_IDS[SECTION_IDS.length - 1];
+			setActive(current);
+		};
+		update();
+		window.addEventListener("scroll", update, { passive: true });
+		window.addEventListener("resize", update);
+		return () => {
+			window.removeEventListener("scroll", update);
+			window.removeEventListener("resize", update);
+		};
+	}, []);
+
+	return active;
+}
+
 export function NavBar() {
 	const [scrolled, setScrolled] = useState(false);
 	const [open, setOpen] = useState(false);
 	const { lang, toggle: toggleLang } = useLang();
 	const { theme, toggle: toggleTheme } = useTheme();
 	const t = translations[lang];
+	const active = useActiveSection();
 
-	const links = [
-		{ label: t.nav.about, href: "#sobre-mi" },
-		{ label: t.nav.experience, href: "#experiencia" },
-		{ label: t.nav.technologies, href: "#tecnologias" },
-		{ label: t.nav.projects, href: "#proyectos" },
-		{ label: t.nav.contact, href: "#contacto" },
+	const links: { id: SectionId; label: string; href: string }[] = [
+		{ id: "sobre-mi", label: t.nav.about, href: "#sobre-mi" },
+		{ id: "experiencia", label: t.nav.experience, href: "#experiencia" },
+		{ id: "tecnologias", label: t.nav.technologies, href: "#tecnologias" },
+		{ id: "proyectos", label: t.nav.projects, href: "#proyectos" },
+		{ id: "contacto", label: t.nav.contact, href: "#contacto" },
 	];
 
 	useEffect(() => {
@@ -83,16 +130,36 @@ export function NavBar() {
 
 				{/* Desktop links */}
 				<ul className="hidden sm:flex items-center gap-8">
-					{links.map((link) => (
-						<li key={link.href}>
-							<a
-								href={link.href}
-								className="text-muted text-sm hover:text-foreground transition-colors"
-							>
-								{link.label}
-							</a>
-						</li>
-					))}
+					{links.map((link) => {
+						const isActive = active === link.id;
+						return (
+							<li key={link.href} className="relative">
+								<a
+									href={link.href}
+									className={`text-sm transition-colors ${
+										isActive
+											? "text-foreground"
+											: "text-muted hover:text-foreground"
+									}`}
+								>
+									{link.label}
+								</a>
+								{isActive && (
+									<motion.span
+										// Shared layoutId animates the underline as it
+										// moves between active links instead of cross-fading.
+										layoutId="navbar-active-underline"
+										className="absolute -bottom-1.5 left-0 right-0 h-px bg-accent"
+										transition={{
+											type: "spring",
+											stiffness: 380,
+											damping: 30,
+										}}
+									/>
+								)}
+							</li>
+						);
+					})}
 				</ul>
 
 				{/* Controls: lang + theme + hamburger */}
@@ -150,17 +217,24 @@ export function NavBar() {
 						className="sm:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
 					>
 						<ul className="px-6 py-4 space-y-4">
-							{links.map((link) => (
-								<li key={link.href}>
-									<a
-										href={link.href}
-										className="text-muted text-sm hover:text-foreground transition-colors block"
-										onClick={() => setOpen(false)}
-									>
-										{link.label}
-									</a>
-								</li>
-							))}
+							{links.map((link) => {
+								const isActive = active === link.id;
+								return (
+									<li key={link.href}>
+										<a
+											href={link.href}
+											className={`text-sm transition-colors block ${
+												isActive
+													? "text-accent"
+													: "text-muted hover:text-foreground"
+											}`}
+											onClick={() => setOpen(false)}
+										>
+											{link.label}
+										</a>
+									</li>
+								);
+							})}
 						</ul>
 					</motion.div>
 				)}

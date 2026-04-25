@@ -55,14 +55,40 @@ body {
 	font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Each section is at least one viewport tall (minus navbar) so two sections are never visible simultaneously */
-#inicio,
-#sobre-mi,
-#experiencia,
-#tecnologias,
-#proyectos,
-#contacto {
-	min-height: calc(100dvh - 64px);
+/*
+ * Anchor navigation: smooth scroll, and section content lands below the
+ * fixed navbar instead of under it.
+ *
+ * `position: relative` on <html> lets motion's `useScroll({ target })`
+ * measure offsets against the scroll container (default
+ * `document.scrollingElement`) without falling back to its dev warning.
+ */
+html {
+	scroll-behavior: smooth;
+	position: relative;
+}
+
+section[id] {
+	scroll-margin-top: 64px;
+}
+
+/*
+ * Accessibility: anyone with `prefers-reduced-motion: reduce` (vestibular
+ * disorders, motion sickness, etc.) gets near-instant CSS transitions and
+ * no smooth scroll. JS-driven motion components are handled separately
+ * via `MotionConfig` in `Providers.tsx`.
+ */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
 }
 
 ::selection {

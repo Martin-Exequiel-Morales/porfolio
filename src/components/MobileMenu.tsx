@@ -34,12 +34,23 @@ export function MobileMenu({
 }: MobileMenuProps) {
 	const firstLinkRef = useRef<HTMLAnchorElement>(null);
 	const wasOpen = useRef(false);
+	// Distinguish closes triggered by clicking a nav link from closes
+	// triggered by Escape / the burger toggle. When a link is clicked we
+	// must NOT call .focus() on the burger button — doing so cancels the
+	// in-flight native anchor smooth-scroll, leaving the user on the same
+	// section even though the menu has visually closed.
+	const closedByLink = useRef(false);
 
 	useEffect(() => {
 		if (!open) {
-			// On the open->close transition, restore focus to the trigger.
-			if (wasOpen.current) returnFocusRef.current?.focus();
+			// On the open->close transition, restore focus to the trigger
+			// only for keyboard-style closes (Escape / burger). Link clicks
+			// should let the browser keep doing its anchor navigation.
+			if (wasOpen.current && !closedByLink.current) {
+				returnFocusRef.current?.focus();
+			}
 			wasOpen.current = false;
+			closedByLink.current = false;
 			return;
 		}
 		wasOpen.current = true;
@@ -85,7 +96,10 @@ export function MobileMenu({
 												? "text-accent"
 												: "text-muted hover:text-foreground"
 										}`}
-										onClick={onClose}
+										onClick={() => {
+											closedByLink.current = true;
+											onClose();
+										}}
 									>
 										{link.label}
 									</a>

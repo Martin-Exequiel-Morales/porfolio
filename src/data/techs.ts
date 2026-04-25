@@ -1,4 +1,4 @@
-import type { Bilingual } from "@/locales/types";
+import type { Bilingual } from "@/lib/i18n";
 
 export type TechCategory = {
 	category: Bilingual;

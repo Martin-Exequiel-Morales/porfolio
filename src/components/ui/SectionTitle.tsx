@@ -13,7 +13,9 @@ export function SectionTitle({ title, subtitle }: SectionTitleProps) {
 			<h2 className="text-3xl font-bold text-foreground tracking-tight">
 				{title}
 			</h2>
-			{subtitle && <p className="mt-2 text-muted text-base">{subtitle}</p>}
+			{subtitle ? (
+				<p className="mt-2 text-muted text-base">{subtitle}</p>
+			) : null}
 			<motion.div
 				className="mt-4 h-px bg-accent origin-left"
 				initial={{ scaleX: 0, width: 48 }}

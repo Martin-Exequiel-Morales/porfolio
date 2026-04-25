@@ -1,43 +1,41 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
 import {
 	motion,
-	AnimatePresence,
+	useMotionValue,
+	useReducedMotion,
 	useScroll,
 	useTransform,
 } from "motion/react";
-import { useState, useEffect, useRef } from "react";
-import { useLang } from "@/contexts/LanguageContext";
-import { translations } from "@/locales";
+import { useLang, useT } from "@/contexts/LanguageContext";
 import { personal } from "@/data/personal";
-import { useMagnetic } from "@/hooks/useMagnetic";
+import { BlinkingCursor } from "@/components/ui/BlinkingCursor";
+import { ScrollDownArrow } from "@/components/ui/ScrollDownArrow";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function Hero() {
 	const { lang } = useLang();
-	const t = translations[lang];
-	// Cursor stays visible until the name has animated in (delay 0.1 + duration 0.4 = ~600ms)
-	const [showCursor, setShowCursor] = useState(true);
-
-	useEffect(() => {
-		const timer = setTimeout(() => setShowCursor(false), 1200);
-		return () => clearTimeout(timer);
-	}, []);
+	const t = useT();
+	const reduce = useReducedMotion();
 
 	// Parallax: as the user scrolls past the hero, its background gradient
-	// trails behind the foreground content, giving a subtle sense of depth.
+	// trails behind the foreground content for a subtle sense of depth.
+	// Motion values bypass `MotionConfig reducedMotion`, so we honour it
+	// manually here — users who request reduced motion get a static
+	// background.
 	const sectionRef = useRef<HTMLElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
 		offset: ["start start", "end start"],
 	});
-	const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-	const bgOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
-
-	// Magnetic CTAs (desktop only — the hook auto-disables on touch and
-	// when the user prefers reduced motion).
-	const projectsCta = useMagnetic<HTMLAnchorElement>();
-	const contactCta = useMagnetic<HTMLAnchorElement>();
+	const liveBgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+	const liveBgOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+	const staticBgY = useMotionValue("0%");
+	const staticBgOpacity = useMotionValue(1);
+	const bgY = reduce ? staticBgY : liveBgY;
+	const bgOpacity = reduce ? staticBgOpacity : liveBgOpacity;
 
 	return (
 		<section
@@ -45,7 +43,6 @@ export function Hero() {
 			id="inicio"
 			className="relative min-h-screen flex flex-col justify-center pt-16 px-6 max-w-4xl mx-auto w-full"
 		>
-			{/* Background gradient with parallax */}
 			<motion.div
 				aria-hidden="true"
 				className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -56,7 +53,7 @@ export function Hero() {
 						"radial-gradient(ellipse 80% 40% at 50% -10%, rgba(99,102,241,0.11), transparent)",
 				}}
 			/>
-			{/* Avatar */}
+
 			<motion.div
 				className="mb-8"
 				initial={{ opacity: 0, scale: 0.85 }}
@@ -80,20 +77,7 @@ export function Hero() {
 				transition={{ duration: 0.4 }}
 			>
 				{t.hero.greeting}
-				<AnimatePresence>
-					{showCursor && (
-						<motion.span
-							key="cursor"
-							initial={{ opacity: 1 }}
-							animate={{ opacity: [1, 0, 1] }}
-							exit={{ opacity: 0, transition: { duration: 0.2 } }}
-							transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-							className="ml-0.5 inline-block"
-						>
-							|
-						</motion.span>
-					)}
-				</AnimatePresence>
+				<BlinkingCursor />
 			</motion.p>
 
 			<motion.h1
@@ -129,22 +113,18 @@ export function Hero() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.4, delay: 0.4 }}
 			>
-				<motion.a
-					ref={projectsCta.ref}
+				<MagneticButton
 					href="#proyectos"
-					style={{ x: projectsCta.x, y: projectsCta.y }}
 					className="px-6 py-3 rounded-lg bg-accent text-white font-medium text-sm hover:bg-accent-hover transition-colors"
 				>
 					{t.hero.ctaProjects}
-				</motion.a>
-				<motion.a
-					ref={contactCta.ref}
+				</MagneticButton>
+				<MagneticButton
 					href="#contacto"
-					style={{ x: contactCta.x, y: contactCta.y }}
 					className="px-6 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:border-accent hover:text-accent transition-colors"
 				>
 					{t.hero.ctaContact}
-				</motion.a>
+				</MagneticButton>
 			</motion.div>
 
 			<motion.div
@@ -171,34 +151,7 @@ export function Hero() {
 				</a>
 			</motion.div>
 
-			{/* Scroll indicator */}
-			<motion.a
-				href="#sobre-mi"
-				className="hidden sm:flex absolute bottom-10 left-1/2 -translate-x-1/2 text-muted hover:text-foreground transition-colors"
-				initial={{ opacity: 0, y: -6 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{
-					duration: 0.4,
-					delay: 0.8,
-					repeat: Infinity,
-					repeatType: "reverse",
-					repeatDelay: 0.6,
-				}}
-				aria-label="Scroll down"
-			>
-				<svg
-					width="20"
-					height="20"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					strokeWidth="2"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-				>
-					<path d="M12 5v14M5 12l7 7 7-7" />
-				</svg>
-			</motion.a>
+			<ScrollDownArrow />
 		</section>
 	);
 }

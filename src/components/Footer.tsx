@@ -1,12 +1,10 @@
 "use client";
 
-import { useLang } from "@/contexts/LanguageContext";
-import { translations } from "@/locales";
-import { personal } from "@/data/personal";
+import { useT } from "@/contexts/LanguageContext";
+import { socialLinks } from "@/data/personal";
 
 export function Footer() {
-	const { lang } = useLang();
-	const t = translations[lang];
+	const t = useT();
 
 	return (
 		<footer className="border-t border-border mt-8">
@@ -15,28 +13,18 @@ export function Footer() {
 					{t.footer} · {new Date().getFullYear()}
 				</p>
 				<div className="flex gap-5">
-					<a
-						href={personal.github}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-muted hover:text-accent transition-colors text-xs font-mono"
-					>
-						GitHub ↗
-					</a>
-					<a
-						href={personal.linkedin}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-muted hover:text-accent transition-colors text-xs font-mono"
-					>
-						LinkedIn ↗
-					</a>
-					<a
-						href={`mailto:${personal.email}`}
-						className="text-muted hover:text-accent transition-colors text-xs font-mono"
-					>
-						Email ↗
-					</a>
+					{socialLinks.map((link) => (
+						<a
+							key={link.id}
+							href={link.href}
+							{...(link.external
+								? { target: "_blank", rel: "noopener noreferrer" }
+								: {})}
+							className="text-muted hover:text-accent transition-colors text-xs font-mono"
+						>
+							{link.id === "email" ? "Email ↗" : link.label}
+						</a>
+					))}
 				</div>
 			</div>
 		</footer>

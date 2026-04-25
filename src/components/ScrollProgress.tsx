@@ -2,21 +2,27 @@
 
 /**
  * `ScrollProgress` — thin bar pinned to the very top of the viewport that
- * fills horizontally as the user scrolls the page. A spring smooths the
- * value so quick wheel deltas don't translate to jittery jumps.
+ * fills horizontally as the user scrolls the page.
+ *
+ * For users without reduced motion, a spring smooths the value so quick
+ * wheel deltas don't translate to jittery jumps. For users who request
+ * reduced motion, we skip the spring entirely and bind directly to the
+ * raw `scrollYProgress` — instant, no easing, no extra rAF work.
  *
  * Sits above the navbar (z-index higher than `z-50`) so it stays visible.
  */
 
-import { motion, useScroll, useSpring } from "motion/react";
+import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 
 export function ScrollProgress() {
+	const reduce = useReducedMotion();
 	const { scrollYProgress } = useScroll();
-	const scaleX = useSpring(scrollYProgress, {
+	const smoothed = useSpring(scrollYProgress, {
 		stiffness: 140,
 		damping: 28,
 		restDelta: 0.001,
 	});
+	const scaleX = reduce ? scrollYProgress : smoothed;
 
 	return (
 		<motion.div

@@ -14,29 +14,47 @@ const ThemeContext = createContext<ThemeContextType>({
 	toggle: () => {},
 });
 
-function applyTheme(theme: Theme) {
-	if (theme === "light") {
-		document.documentElement.classList.add("light");
-	} else {
-		document.documentElement.classList.remove("light");
-	}
+/**
+ * Reads the theme picked by the pre-hydration bootstrap script in
+ * `app/layout.tsx`. The script writes the resolved theme onto
+ * `document.documentElement.classList` *before* React mounts, so the very
+ * first client render already matches what the user is seeing.
+ */
+function getInitialTheme(): Theme {
+	if (typeof document === "undefined") return "dark";
+	return document.documentElement.classList.contains("light")
+		? "light"
+		: "dark";
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-	const [theme, setTheme] = useState<Theme>("dark");
+	const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
+	// Single source of truth: state drives the DOM class. Eliminates the
+	// possibility of state and `<html class>` drifting apart, which is what
+	// happened when the previous version applied the class from both an
+	// effect *and* the `toggle` handler.
 	useEffect(() => {
-		const saved = localStorage.getItem("theme") as Theme | null;
-		const initial: Theme = saved === "light" ? "light" : "dark";
-		setTheme(initial);
-		applyTheme(initial);
+		document.documentElement.classList.toggle("light", theme === "light");
+	}, [theme]);
+
+	// Follow OS theme changes live, but only when the user hasn't explicitly
+	// chosen a theme themselves. As soon as they toggle once, their pick
+	// (saved in localStorage) wins and we stop listening.
+	useEffect(() => {
+		const mql = window.matchMedia("(prefers-color-scheme: light)");
+		const onChange = (e: MediaQueryListEvent) => {
+			if (localStorage.getItem("theme")) return;
+			setTheme(e.matches ? "light" : "dark");
+		};
+		mql.addEventListener("change", onChange);
+		return () => mql.removeEventListener("change", onChange);
 	}, []);
 
 	const toggle = () => {
 		const next: Theme = theme === "dark" ? "light" : "dark";
-		setTheme(next);
 		localStorage.setItem("theme", next);
-		applyTheme(next);
+		setTheme(next);
 	};
 
 	return (

@@ -1,7 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import type { Lang } from "@/locales/types";
+import { translations } from "@/locales";
+import type { Lang, Translations } from "@/lib/i18n";
 
 type LanguageContextType = {
 	lang: Lang;
@@ -13,24 +14,36 @@ const LanguageContext = createContext<LanguageContextType>({
 	toggle: () => {},
 });
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-	const [lang, setLang] = useState<Lang>("es");
+/**
+ * Reads the language picked by the pre-hydration bootstrap script in
+ * `app/layout.tsx`. The script writes the resolved language (from
+ * `localStorage.lang`, with `navigator.language` as fallback) onto
+ * `<html data-lang="...">` *before* React mounts, so the very first client
+ * render already matches the user's preference.
+ *
+ * Falls back to `"es"` on the server (no `document`) and on any value the
+ * script may have produced outside the supported set.
+ */
+function getInitialLang(): Lang {
+	if (typeof document === "undefined") return "es";
+	const dl = document.documentElement.getAttribute("data-lang");
+	return dl === "en" || dl === "es" ? dl : "es";
+}
 
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+	const [lang, setLang] = useState<Lang>(getInitialLang);
+
+	// Keep `<html lang>` and `data-lang` in sync with state. Important for
+	// screen readers, SEO crawlers, and the bootstrap script's next read.
 	useEffect(() => {
-		const saved = localStorage.getItem("lang");
-		if (saved === "es" || saved === "en") {
-			setLang(saved);
-			return;
-		}
-		// Auto-detect: Spanish for Spanish-speaking locales, English for the rest
-		const browserLang = navigator.language ?? "";
-		setLang(browserLang.toLowerCase().startsWith("es") ? "es" : "en");
-	}, []);
+		document.documentElement.lang = lang;
+		document.documentElement.setAttribute("data-lang", lang);
+	}, [lang]);
 
 	const toggle = () => {
 		const next: Lang = lang === "es" ? "en" : "es";
-		setLang(next);
 		localStorage.setItem("lang", next);
+		setLang(next);
 	};
 
 	return (
@@ -41,3 +54,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 }
 
 export const useLang = () => useContext(LanguageContext);
+
+/**
+ * Convenience hook — returns the active translation table for the current
+ * language. Saves callers from the `const { lang } = useLang(); const t =
+ * translations[lang]` boilerplate.
+ */
+export function useT(): Translations {
+	const { lang } = useLang();
+	return translations[lang];
+}

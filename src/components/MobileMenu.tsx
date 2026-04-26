@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import type { SectionId } from "@/lib/sections";
+import { NAV_HEIGHT, type SectionId } from "@/lib/sections";
 
 type Link = { id: SectionId; label: string; href: string };
 
@@ -96,9 +96,46 @@ export function MobileMenu({
 												? "text-accent"
 												: "text-muted hover:text-foreground"
 										}`}
-										onClick={() => {
+										onClick={(e) => {
+											// Drive the navigation manually instead of relying
+											// on the browser's default anchor behaviour. Chrome
+											// on Android drops both the native fragment-scroll
+											// AND `scrollIntoView({behavior:"smooth"})` when
+											// they're requested in the same tick as a React
+											// state update / layout change (here: the menu's
+											// exit animation). We:
+											//   1. preventDefault so the native handler is out.
+											//   2. close the menu (state change in this tick).
+											//   3. defer the scroll to the next frame so React
+											//      has committed and Chrome won't squash the
+											//      scroll request.
+											//   4. use window.scrollTo with a precomputed top
+											//      (compensating for the fixed navbar) instead
+											//      of scrollIntoView, which is more reliable
+											//      on mobile engines.
+											e.preventDefault();
 											closedByLink.current = true;
 											onClose();
+											const targetId = link.id;
+											const reduce = window.matchMedia(
+												"(prefers-reduced-motion: reduce)",
+											).matches;
+											requestAnimationFrame(() => {
+												const target = document.getElementById(targetId);
+												if (!target) return;
+												const top =
+													target.getBoundingClientRect().top +
+													window.scrollY -
+													NAV_HEIGHT;
+												window.scrollTo({
+													top: Math.max(0, top),
+													behavior: reduce ? "auto" : "smooth",
+												});
+											});
+											// Keep the URL in sync without retriggering a
+											// fragment scroll that would race with the one
+											// scheduled above on some engines.
+											window.history.replaceState(null, "", link.href);
 										}}
 									>
 										{link.label}

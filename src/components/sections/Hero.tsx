@@ -55,7 +55,7 @@ export function Hero() {
 			/>
 
 			<motion.div
-				className="mb-8"
+				className="mb-6"
 				initial={{ opacity: 0, scale: 0.85 }}
 				animate={{ opacity: 1, scale: 1 }}
 				transition={{ duration: 0.5 }}
@@ -70,11 +70,31 @@ export function Hero() {
 				/>
 			</motion.div>
 
+			{/*
+			 * Availability pill: pulsing green dot + label.
+			 * Sits above the greeting so a recruiter can see hiring signal
+			 * within the first second of landing on the page.
+			 */}
+			<motion.div
+				className="mb-4"
+				initial={{ opacity: 0, y: 10 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.4 }}
+			>
+				<span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 text-xs font-medium">
+					<span className="relative flex h-2 w-2">
+						<span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 motion-safe:animate-ping" />
+						<span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+					</span>
+					{t.hero.availability}
+				</span>
+			</motion.div>
+
 			<motion.p
 				className="text-accent font-mono text-sm mb-4 flex items-center gap-0"
 				initial={{ opacity: 0, y: 10 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.4 }}
+				transition={{ duration: 0.4, delay: 0.05 }}
 			>
 				{t.hero.greeting}
 				<BlinkingCursor />
@@ -118,6 +138,19 @@ export function Hero() {
 					className="px-6 py-3 rounded-lg bg-accent text-white font-medium text-sm hover:bg-accent-hover transition-colors"
 				>
 					{t.hero.ctaProjects}
+				</MagneticButton>
+				<MagneticButton
+					href={
+						lang === "es"
+							? "/Martin-Morales-CV-ES.pdf"
+							: "/Martin-Morales-CV-EN.pdf"
+					}
+					target="_blank"
+					rel="noopener noreferrer"
+					download
+					className="px-6 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:border-accent hover:text-accent transition-colors"
+				>
+					{t.hero.ctaCV}
 				</MagneticButton>
 				<MagneticButton
 					href="#contacto"

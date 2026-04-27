@@ -20,18 +20,18 @@ export const metadata: Metadata = {
 	},
 	title: "Martín Morales · Full Stack Developer",
 	description:
-		"Portfolio de Martín Exequiel Morales, Full Stack Developer y Tech Lead con experiencia en PHP y ecosistema JS moderno (Next.js, React, TypeScript).",
+		"Full Stack Developer con +4 años construyendo software real en producción (Next.js, React, TypeScript, PHP). Disponible para trabajo remoto.",
 	openGraph: {
 		type: "website",
 		title: "Martín Morales · Full Stack Developer",
 		description:
-			"Portfolio de Martín Exequiel Morales, Full Stack Developer y Tech Lead con experiencia en Next.js, React, TypeScript y más.",
+			"Full Stack Developer con +4 años en producción. Next.js, React, TypeScript. Disponible para trabajo remoto.",
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "Martín Morales · Full Stack Developer",
 		description:
-			"Portfolio de Martín Exequiel Morales, Full Stack Developer y Tech Lead.",
+			"Full Stack Developer disponible para trabajo remoto. Next.js, React, TypeScript.",
 	},
 };
 

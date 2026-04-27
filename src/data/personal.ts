@@ -1,18 +1,18 @@
 import type { Bilingual } from "@/lib/i18n";
 
 const github = "https://github.com/Martin-Exequiel-Morales";
-const linkedin = "https://www.linkedin.com/in/martin-morales-2b8303274/";
+const linkedin = "https://www.linkedin.com/in/martin-exequiel-morales/";
 const email = "martin.exequiel.morales@gmail.com";
 
 export const personal = {
 	name: "Martín Exequiel Morales",
 	role: {
-		es: "Tech Lead · Full Stack Developer",
-		en: "Tech Lead · Full Stack Developer",
+		es: "Full Stack Developer",
+		en: "Full Stack Developer",
 	} satisfies Bilingual,
 	description: {
-		es: "Desarrollador fullstack con experiencia en sistemas de diversa índole: portales institucionales, herramientas administrativas, dashboards, minijuegos y exportadores de datos. Busco aplicar mis conocimientos en proyectos web, e-commerce y productos digitales.",
-		en: "Full Stack Developer with experience across diverse systems: institutional portals, administrative tools, dashboards, mini-games, and data export interfaces. Looking to apply my skills in web products, e-commerce, and digital projects.",
+		es: "Desarrollador fullstack con +4 años construyendo software real: portales con cientos de usuarios activos, herramientas administrativas, dashboards y exportadores de datos entre sistemas. Busco roles 100% remotos —web apps, e-commerce o SaaS— donde aportar valor con código bien escrito.",
+		en: "Full Stack Developer with 4+ years building real-world software: portals serving hundreds of active users, admin tools, dashboards, and cross-system data export pipelines. Looking for fully remote roles —web apps, e-commerce, or SaaS— where I can ship well-crafted code.",
 	} satisfies Bilingual,
 	github,
 	linkedin,

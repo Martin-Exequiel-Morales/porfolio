@@ -21,16 +21,19 @@ const highlights: Highlight[] = [
 		label: { es: "años de experiencia", en: "years of experience" },
 	},
 	{
+		value: "360+",
+		num: 360,
+		suffix: "+",
+		label: {
+			es: "usuarios activos en producción",
+			en: "active users in production",
+		},
+	},
+	{
 		value: "10+",
 		num: 10,
 		suffix: "+",
 		label: { es: "sistemas construidos", en: "systems built" },
-	},
-	{
-		value: "Full Stack",
-		num: null,
-		suffix: "",
-		label: { es: "Frontend & Backend", en: "Frontend & Backend" },
 	},
 ];
 

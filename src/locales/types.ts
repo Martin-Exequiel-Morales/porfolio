@@ -14,6 +14,8 @@ export type Translations = {
 		greeting: string;
 		ctaProjects: string;
 		ctaContact: string;
+		ctaCV: string;
+		availability: string;
 	};
 	about: {
 		title: string;

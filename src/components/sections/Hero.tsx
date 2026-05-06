@@ -175,6 +175,14 @@ export function Hero() {
 					GitHub ↗
 				</a>
 				<a
+					href={personal.gitlab}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-muted hover:text-accent transition-colors text-sm font-mono"
+				>
+					GitLab ↗
+				</a>
+				<a
 					href={personal.linkedin}
 					target="_blank"
 					rel="noopener noreferrer"

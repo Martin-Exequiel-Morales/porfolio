@@ -21,8 +21,8 @@ const highlights: Highlight[] = [
 		label: { es: "años de experiencia", en: "years of experience" },
 	},
 	{
-		value: "360+",
-		num: 360,
+		value: "410+",
+		num: 410,
 		suffix: "+",
 		label: {
 			es: "usuarios activos en producción",
@@ -30,10 +30,13 @@ const highlights: Highlight[] = [
 		},
 	},
 	{
-		value: "10+",
-		num: 10,
-		suffix: "+",
-		label: { es: "sistemas construidos", en: "systems built" },
+		value: "6s → 5ms",
+		num: null,
+		suffix: "",
+		label: {
+			es: "mejora en tiempos de carga críticos",
+			en: "improvement on critical load times",
+		},
 	},
 ];
 
@@ -67,28 +70,35 @@ export function About() {
 				))}
 			</motion.div>
 
-			<div className="grid sm:grid-cols-2 gap-10 text-muted leading-relaxed">
-				<motion.div
-					className="space-y-4"
-					initial={{ opacity: 0, x: -16 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					transition={{ duration: 0.5, delay: 0.2 }}
-					viewport={{ once: true }}
-				>
-					<p>{t.about.p1}</p>
-					<p>{t.about.p2}</p>
-				</motion.div>
-				<motion.div
-					className="space-y-4"
-					initial={{ opacity: 0, x: 16 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					transition={{ duration: 0.5, delay: 0.3 }}
-					viewport={{ once: true }}
-				>
-					<p>{t.about.p3}</p>
-					<p>{t.about.p4}</p>
-				</motion.div>
-			</div>
+			<motion.div
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.4, delay: 0.15 }}
+				viewport={{ once: true }}
+			>
+				<p className="text-sm font-mono text-accent mb-4">{t.about.focusTitle}</p>
+				<div className="grid sm:grid-cols-3 gap-4 mb-10">
+					{t.about.focus.map((item) => (
+						<div
+							key={item.label}
+							className="rounded-xl border border-border bg-surface p-5"
+						>
+							<p className="font-semibold text-foreground mb-2">{item.label}</p>
+							<p className="text-sm text-muted leading-relaxed">{item.detail}</p>
+						</div>
+					))}
+				</div>
+			</motion.div>
+
+			<motion.p
+				className="text-muted leading-relaxed max-w-3xl border-l-2 border-accent/40 pl-4"
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.4, delay: 0.2 }}
+				viewport={{ once: true }}
+			>
+				{t.about.closing}
+			</motion.p>
 		</Section>
 	);
 }

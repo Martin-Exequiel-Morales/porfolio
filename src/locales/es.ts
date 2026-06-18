@@ -17,14 +17,27 @@ export const es: Translations = {
 	},
 	about: {
 		title: "Sobre mí",
-		p1: "Soy desarrollador fullstack. Llevo más de 4 años en la Cámara de Representantes construyendo sistemas de uso real: portales de acceso con cientos de usuarios activos, herramientas administrativas, dashboards interactivos y exportadores de datos entre sistemas.",
-		p2: "Empecé con PHP, JavaScript y Python. En 2025 promoví e implementé el ecosistema JS moderno —Next.js, TypeScript, Prisma— como nuevo estándar para el área. Hoy también coordino al equipo: asigno tareas, defino prioridades y acompaño en el día a día, sin perder el foco en construir producto.",
-		p3: "Me motiva el software que la gente usa de verdad. Años de trabajo con usuarios de distintos niveles técnicos me enseñaron a priorizar la usabilidad y la fluidez sobre la complejidad.",
-		p4: "Busco sumarme a un equipo 100% remoto: aplicaciones web, e-commerce, SaaS o cualquier producto digital donde pueda aportar valor con código bien escrito.",
+		focusTitle: "En lo que me enfoco",
+		focus: [
+			{
+				label: "Menos espera",
+				detail: "Procesos en segundo plano, cargas async y arquitectura que no bloquea al usuario.",
+			},
+			{
+				label: "Mejor feedback",
+				detail: "Estados claros mientras algo se procesa, para que sepa qué pasa en cada paso.",
+			},
+			{
+				label: "Menos errores",
+				detail: "Validaciones, migraciones ordenadas y código mantenible que reduce fricción.",
+			},
+		],
+		closing:
+			"Busco desafíos remotos donde pueda generar impacto en eficiencia o fluidez para quienes usan el producto.",
 	},
 	experience: {
 		title: "Experiencia",
-		subtitle: "Mi trayectoria profesional",
+		subtitle: "Impacto técnico en producción",
 	},
 	technologies: {
 		title: "Tecnologías",
@@ -32,7 +45,7 @@ export const es: Translations = {
 	},
 	projects: {
 		title: "Proyectos",
-		subtitle: "Sistemas desarrollados en producción",
+		subtitle: "Productos en producción y en desarrollo",
 		completed: "Completado",
 		inProgress: "En desarrollo",
 	},

@@ -53,9 +53,17 @@ export function Experience() {
 
 								<p className="text-muted text-sm mb-4">{item.company}</p>
 
-								<p className="text-muted text-sm leading-relaxed mb-5">
-									{item.description[lang]}
-								</p>
+								<ul className="space-y-2 mb-5">
+									{item.highlights.map((highlight) => (
+										<li
+											key={highlight.en}
+											className="text-muted text-sm flex gap-2 items-start leading-relaxed"
+										>
+											<span className="text-accent mt-0.5 shrink-0">▸</span>
+											{highlight[lang]}
+										</li>
+									))}
+								</ul>
 
 								<div className="flex flex-wrap gap-2">
 									{item.tech.map((tech) => (

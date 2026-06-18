@@ -55,7 +55,7 @@ export function Projects() {
 								</span>
 							</div>
 
-							<p className="text-muted text-base leading-relaxed mb-4 text-justify">
+							<p className="text-muted text-sm leading-relaxed mb-4">
 								{project.description[lang]}
 							</p>
 

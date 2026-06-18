@@ -12,8 +12,8 @@ export const personal = {
 		en: "Full Stack Developer",
 	} satisfies Bilingual,
 	description: {
-		es: "Desarrollador fullstack con +4 años construyendo software real: portales con cientos de usuarios activos, herramientas administrativas, dashboards y exportadores de datos entre sistemas. Busco roles 100% remotos —web apps, e-commerce o SaaS— donde aportar valor con código bien escrito.",
-		en: "Full Stack Developer with 4+ years building real-world software: portals serving hundreds of active users, admin tools, dashboards, and cross-system data export pipelines. Looking for fully remote roles —web apps, e-commerce, or SaaS— where I can ship well-crafted code.",
+		es: "Desarrollo software pensando en qué objetivo cumple y cómo lograrlo: rendimiento, facilitarle la vida al usuario y conectar con su experiencia.",
+		en: "I build software around the goal it serves and how to get there — performance, making users' lives easier, and staying connected to their experience.",
 	} satisfies Bilingual,
 	github,
 	gitlab,

@@ -24,8 +24,11 @@
 .DS_Store
 *.pem
 
-# debug
-npm-debug.log*
+# generated documents (sources live in documents/sources/)
+/documents/generated/*
+!/documents/generated/.gitkeep
+
+# debugnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*

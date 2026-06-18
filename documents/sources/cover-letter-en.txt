@@ -1,0 +1,24 @@
+Martin Exequiel Morales
+Full Stack Developer · Open to Remote Work
+martin.exequiel.morales@gmail.com
+https://www.linkedin.com/in/martin-exequiel-morales/
+https://martin-morales-portfolio.vercel.app
+Argentina · GMT-3
+
+[Date]
+
+Dear [Company] Team,
+
+I am writing to express my interest in the [Role] position. I am a Full Stack Developer with over four years of experience building production software at the Chamber of Representatives of Misiones (Argentina). I am looking for remote challenges where I can drive impact on efficiency and flow for the people using the product.
+
+In my current role, I coordinate the development team and drove adoption of Next.js, TypeScript, and Prisma as the area standard. I delivered user-facing optimizations including background workers for PDF conversion, async search (~6 s to ~5 ms), and migration from PHP monoliths to clean architecture. I also led the Institutional Portal, now serving 410+ active users.
+
+In parallel, I am building SaaS Online Store, a multi-tenant e-commerce platform for Argentine SMBs with Redis stock reservation at checkout, MercadoPago/Viumi payments, distance-based shipping, and an RBAC admin panel.
+
+My core stack includes React, Next.js, TypeScript, Node.js, Prisma, PostgreSQL, Redis, Docker, Jest, and Playwright, with a strong PHP and Python background.
+
+I would welcome the opportunity to discuss how my experience aligns with your team's needs. My CV is attached; my portfolio is at https://martin-morales-portfolio.vercel.app.
+
+Best regards,
+
+Martin Exequiel Morales

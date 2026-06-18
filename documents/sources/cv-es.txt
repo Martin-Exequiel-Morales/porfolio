@@ -1,0 +1,53 @@
+MARTÍN EXEQUIEL MORALES
+Full Stack Developer · Disponible para trabajo remoto (GMT-3)
+martin.exequiel.morales@gmail.com | https://www.linkedin.com/in/martin-exequiel-morales
+https://martin-morales-portfolio.vercel.app | https://github.com/Martin-Exequiel-Morales
+Posadas, Misiones, Argentina
+
+--- RESUMEN PROFESIONAL ---
+Desarrollador Full Stack con más de 4 años en producción. Diseño software según el objetivo que debe cumplir y cómo lograrlo, con foco en rendimiento, feedback al usuario y fluidez. Experiencia liderando equipos, migrando monolitos a arquitecturas modulares y construyendo plataformas con impacto medible (410+ usuarios activos). Busco desafíos remotos en full stack o backend donde aportar eficiencia y experiencia de uso.
+
+--- COMPETENCIAS TÉCNICAS ---
+Lenguajes: TypeScript, JavaScript, PHP, Python, SQL
+Frontend: React, Next.js, Tailwind CSS, HTML, CSS
+Backend: Node.js, Next.js Route Handlers, REST APIs, Prisma, Zod, Clean Architecture
+Bases de datos: PostgreSQL, MySQL, Oracle, Redis
+DevOps y calidad: Docker, Nginx, Git, GitHub Actions, Jest, Playwright
+Integraciones: MercadoPago, Google Maps API, Resend, WhatsApp (wa.me)
+Otros: Multi-tenant SaaS, RBAC, IoT (Arduino), Linux
+
+--- EXPERIENCIA PROFESIONAL ---
+
+Tech Lead · Full Stack Developer
+Cámara de Representantes de la Provincia de Misiones | Posadas, Argentina | 2025 – Presente
+• Coordino el equipo de desarrollo: tareas, prioridades, plazos y feedback continuo.
+• Impulsé Next.js, TypeScript y Prisma como estándar del área.
+• Entregué un cambio troncal del sistema principal en menos de 1 semana.
+• Migré conversión a PDF a workers en segundo plano; el usuario sigue operando mientras se procesa el archivo.
+• Reemplacé cargas DOM completas por fetch async en búsquedas: de ~6 s a ~5 ms de respuesta.
+• Migré monolitos PHP (CSS/JS mezclados) a API con clean architecture y assets modulares.
+• Diseñé el Portal Institucional (410+ usuarios activos): acceso unificado, auth por DNI y módulo de tutoriales.
+
+Desarrollador Web
+Cámara de Representantes de la Provincia de Misiones | Posadas, Argentina | 2021 – 2023
+• Mantenimiento y evolución de sistemas internos PHP: consultas optimizadas e interfaces más fluidas.
+• Desarrollé herramientas administrativas, sistemas de cálculo y exportadores de datos entre sistemas.
+• Construí interfaz Python + API + Arduino para robot interactivo (~200 usuarios/semana en visitas institucionales).
+
+--- PROYECTOS ---
+
+Tienda Online SaaS · Proyecto personal · En desarrollo
+• Plataforma e-commerce SaaS multi-tenant para pymes argentinas: catálogo, checkout, envíos y panel admin.
+• Checkout con reserva de stock en Redis (TTL 10 min), pagos MercadoPago/Viumi con webhooks idempotentes.
+• Checkout invitado WhatsApp-first con verificación antifraude en panel admin.
+• Envíos por distancia real (Google Maps), motor de cupones/combos y RBAC por tenant.
+• Monorepo (~370 archivos TS), services/, CI GitHub Actions, tests Jest + Playwright · Next.js, PostgreSQL, Redis, Docker.
+
+--- EDUCACIÓN ---
+
+Formación autodidacta en desarrollo de software
+Aprendizaje continuo en producción: 4+ años construyendo sistemas reales
+
+--- IDIOMAS ---
+
+Español: nativo | Inglés: nivel profesional operativo

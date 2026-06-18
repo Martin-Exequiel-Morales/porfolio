@@ -1,0 +1,11 @@
+Martin Exequiel Morales · Full Stack Developer · Open to Remote Work (GMT-3)
+
+Full Stack Developer with 4+ years in production at the Chamber of Representatives of Misiones. Focus on performance, user feedback, and efficient software. Institutional Portal with 410+ active users; search optimizations from ~6 s to ~5 ms, PDF background workers, and clean architecture migration. Personal project: multi-tenant SaaS Online Store (Redis, MercadoPago, WhatsApp-first checkout).
+
+Stack: TypeScript, Next.js, React, Node.js, Prisma, PostgreSQL, Redis, Docker, Jest, Playwright, PHP, Python.
+
+Seeking remote full stack or backend challenges.
+
+martin.exequiel.morales@gmail.com
+https://martin-morales-portfolio.vercel.app
+https://www.linkedin.com/in/martin-exequiel-morales/

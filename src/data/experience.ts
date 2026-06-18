@@ -4,7 +4,7 @@ export type ExperienceItem = {
 	company: string;
 	role: Bilingual;
 	period: Bilingual;
-	description: Bilingual;
+	highlights: Bilingual[];
 	tech: string[];
 };
 
@@ -16,10 +16,32 @@ export const experience: ExperienceItem[] = [
 			en: "Tech Lead · Full Stack Developer",
 		},
 		period: { es: "2025 – Presente", en: "2025 – Present" },
-		description: {
-			es: "Lidero el área de desarrollo: asigno tareas, defino prioridades, establezco plazos y acompaño al equipo con feedback continuo. Promoví y ejecuté la adopción del ecosistema JavaScript moderno (Next.js + TypeScript + Prisma) como nuevo estándar del área. Diseñé y desarrollé el Portal Institucional, hoy con 360+ usuarios activos: acceso unificado con autenticación por DNI, validación de permisos por sistema mediante adaptadores independientes y un módulo de tutoriales que redujo el volumen de consultas básicas internas. La capa de adaptadores conecta a la base de datos de todos los sistemas internos y deja preparada la infraestructura para alimentar a futuro una IA institucional.",
-			en: "Lead the area's development team: assigning tasks, setting priorities, deadlines, and providing ongoing feedback. Drove the adoption of the modern JavaScript ecosystem (Next.js + TypeScript + Prisma) as the area's new standard. Designed and built the Institutional Portal, currently used by 360+ active users: a unified access system with DNI-based authentication, per-system permission validation through independent adapters, and a tutorials module that cut the volume of basic internal support queries. The adapter layer connects to every internal system's database and lays the groundwork for a future institution-wide AI fed by that data.",
-		},
+		highlights: [
+			{
+				es: "Coordino el equipo: tareas, prioridades, plazos y feedback continuo.",
+				en: "Coordinate the team: tasks, priorities, deadlines, and ongoing feedback.",
+			},
+			{
+				es: "Impulsé Next.js, TypeScript y Prisma como estándar del área.",
+				en: "Drove Next.js, TypeScript, and Prisma as the area's new standard.",
+			},
+			{
+				es: "Entregué un cambio troncal del sistema principal en menos de 1 semana.",
+				en: "Delivered a core change to the main system in under one week.",
+			},
+			{
+				es: "Migré la conversión a PDF a workers en segundo plano: el usuario sigue cargando mientras se procesa el archivo.",
+				en: "Moved PDF conversion to background workers so users keep uploading while files process.",
+			},
+			{
+				es: "Reemplacé cargas DOM completas por fetch async según criterios de búsqueda: de ~6 s a respuesta casi instantánea.",
+				en: "Replaced full DOM reloads with async fetch by search criteria: from ~6 s to near-instant response.",
+			},
+			{
+				es: "Migré monolitos PHP (CSS/JS mezclados) a API con clean architecture y assets modulares.",
+				en: "Migrated PHP monoliths (mixed CSS/JS) to a clean-architecture API with modular assets.",
+			},
+		],
 		tech: [
 			"Next.js",
 			"React",
@@ -43,10 +65,20 @@ export const experience: ExperienceItem[] = [
 			en: "Web Developer",
 		},
 		period: { es: "2021 – 2023", en: "2021 – 2023" },
-		description: {
-			es: "Mantenimiento y evolución de sistemas internos en PHP: optimicé tiempos de consulta y refactoricé interfaces visuales para mejorar fluidez y usabilidad sobre flujos en uso diario. Desarrollé herramientas administrativas, sistemas de cálculo, minijuegos institucionales, interfaces para volcado y exportación de datos entre sistemas y módulos de gestión por sector. En 2022 construí una interfaz en Python que integra una API web con firmware Arduino para el control remoto de un robot —utilizada hoy por ~200 usuarios por semana en visitas de instituciones educativas y de otros ámbitos, junto a los minijuegos institucionales que también desarrollé.",
-			en: "Maintenance and evolution of internal PHP systems: optimized query times and refactored visual interfaces to improve flow and usability across day-to-day workflows. Built administrative tools, calculation systems, institutional mini-games, data dump and export interfaces between systems, and area-specific management modules. In 2022, built a Python interface integrating a web API with Arduino firmware for remote robot control —used today by ~200 weekly users during visits from educational and other institutions, alongside the mini-games I also developed.",
-		},
+		highlights: [
+			{
+				es: "Mantenimiento y evolución de sistemas internos en PHP: consultas más rápidas e interfaces más fluidas.",
+				en: "Maintained and evolved internal PHP systems: faster queries and smoother interfaces.",
+			},
+			{
+				es: "Herramientas administrativas, sistemas de cálculo y exportadores de datos entre sistemas.",
+				en: "Built admin tools, calculation systems, and cross-system data export pipelines.",
+			},
+			{
+				es: "Interfaz Python + API + Arduino para control remoto de robot en visitas institucionales (~200 usuarios/semana).",
+				en: "Python interface + API + Arduino for remote robot control during institutional visits (~200 users/week).",
+			},
+		],
 		tech: [
 			"PHP",
 			"JavaScript",

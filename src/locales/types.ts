@@ -19,10 +19,9 @@ export type Translations = {
 	};
 	about: {
 		title: string;
-		p1: string;
-		p2: string;
-		p3: string;
-		p4: string;
+		focusTitle: string;
+		focus: { label: string; detail: string }[];
+		closing: string;
 	};
 	experience: {
 		title: string;

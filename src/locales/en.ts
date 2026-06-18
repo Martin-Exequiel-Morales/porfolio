@@ -17,14 +17,27 @@ export const en: Translations = {
 	},
 	about: {
 		title: "About me",
-		p1: "Full Stack Developer with 4+ years at the Chamber of Representatives building real-world systems: access portals with hundreds of active users, admin tools, interactive dashboards, and data export pipelines.",
-		p2: "I started with PHP, JavaScript, and Python. In 2025 I proposed and rolled out the modern JS stack \u2014Next.js, TypeScript, Prisma\u2014 as the area's new standard. Today I also coordinate the team: assigning tasks, setting priorities, and providing day-to-day support, without losing focus on shipping product.",
-		p3: "I care about software people actually use. Years working alongside users of all technical levels taught me to put usability and flow first, ahead of complexity.",
-		p4: "Looking to join a fully remote team: web apps, e-commerce, SaaS, or any digital product where I can ship well-crafted code.",
+		focusTitle: "What I focus on",
+		focus: [
+			{
+				label: "Less waiting",
+				detail: "Background workers, async loads, and architecture that never blocks the user.",
+			},
+			{
+				label: "Better feedback",
+				detail: "Clear states while something processes, so users always know what's happening.",
+			},
+			{
+				label: "Fewer errors",
+				detail: "Validation, structured migrations, and maintainable code that reduces friction.",
+			},
+		],
+		closing:
+			"Looking for remote challenges where I can drive impact on efficiency or flow for the people using the product.",
 	},
 	experience: {
 		title: "Experience",
-		subtitle: "My professional journey",
+		subtitle: "Technical impact in production",
 	},
 	technologies: {
 		title: "Technologies",
@@ -32,7 +45,7 @@ export const en: Translations = {
 	},
 	projects: {
 		title: "Projects",
-		subtitle: "Production systems I've built",
+		subtitle: "Products shipped and in progress",
 		completed: "Completed",
 		inProgress: "In progress",
 	},

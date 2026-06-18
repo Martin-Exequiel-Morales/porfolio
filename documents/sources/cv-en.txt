@@ -1,0 +1,53 @@
+MARTIN EXEQUIEL MORALES
+Full Stack Developer · Open to Remote Work (GMT-3)
+martin.exequiel.morales@gmail.com | https://www.linkedin.com/in/martin-exequiel-morales
+https://martin-morales-portfolio.vercel.app | https://github.com/Martin-Exequiel-Morales
+Posadas, Misiones, Argentina
+
+--- PROFESSIONAL SUMMARY ---
+Full Stack Developer with 4+ years shipping production software. I build around the goal software must serve and how to get there, with a focus on performance, user feedback, and flow. Experience leading teams, migrating monoliths to modular architectures, and delivering platforms with measurable impact (410+ active users). Seeking remote full stack or backend roles where I can drive efficiency and user experience.
+
+--- TECHNICAL SKILLS ---
+Languages: TypeScript, JavaScript, PHP, Python, SQL
+Frontend: React, Next.js, Tailwind CSS, HTML, CSS
+Backend: Node.js, Next.js Route Handlers, REST APIs, Prisma, Zod, Clean Architecture
+Databases: PostgreSQL, MySQL, Oracle, Redis
+DevOps and Quality: Docker, Nginx, Git, GitHub Actions, Jest, Playwright
+Integrations: MercadoPago, Google Maps API, Resend, WhatsApp (wa.me)
+Other: Multi-tenant SaaS, RBAC, IoT (Arduino), Linux
+
+--- PROFESSIONAL EXPERIENCE ---
+
+Tech Lead · Full Stack Developer
+Chamber of Representatives of Misiones | Posadas, Argentina | 2025 – Present
+• Coordinate the development team: tasks, priorities, deadlines, and ongoing feedback.
+• Drove Next.js, TypeScript, and Prisma as the area's new standard.
+• Delivered a core change to the main system in under one week.
+• Moved PDF conversion to background workers so users keep working while files process.
+• Replaced full DOM reloads with async fetch on search: from ~6 s to ~5 ms response time.
+• Migrated PHP monoliths (mixed CSS/JS) to a clean-architecture API with modular assets.
+• Designed the Institutional Portal (410+ active users): unified access, DNI auth, and tutorials module.
+
+Web Developer
+Chamber of Representatives of Misiones | Posadas, Argentina | 2021 – 2023
+• Maintained and evolved internal PHP systems: optimized queries and smoother interfaces.
+• Built admin tools, calculation systems, and cross-system data export pipelines.
+• Built Python + API + Arduino interface for interactive robot (~200 weekly users on institutional visits).
+
+--- PROJECTS ---
+
+SaaS Online Store · Personal Project · In Progress
+• Multi-tenant e-commerce SaaS for Argentine SMBs: catalog, checkout, shipping, and admin panel.
+• Checkout with Redis stock reservation (10 min TTL), MercadoPago/Viumi payments with idempotent webhooks.
+• WhatsApp-first guest checkout with anti-fraud verification in the admin panel.
+• Distance-based shipping (Google Maps), coupon/combo engine, and per-tenant RBAC.
+• Documented monorepo (~370 TS files), services layer, GitHub Actions CI, Jest + Playwright · Next.js, PostgreSQL, Redis, Docker.
+
+--- EDUCATION ---
+
+Self-taught software development
+Continuous learning in production: 4+ years building real-world systems
+
+--- LANGUAGES ---
+
+Spanish: Native | English: Professional working proficiency

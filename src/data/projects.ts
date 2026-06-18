@@ -10,35 +10,74 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
-		title: { es: "Portal Institucional", en: "Institutional Portal" },
-		status: "completed",
+		title: { es: "Tienda Online SaaS", en: "SaaS Online Store" },
+		status: "in-progress",
 		description: {
-			es: "Sistema de acceso unificado para los usuarios de la Cámara de Representantes. Centraliza el acceso a todos los sistemas internos en un único punto de entrada autenticado y, por diseño, deja la institución en condiciones de alimentar a futuro una IA con los datos de todos los sistemas conectados.",
-			en: "Unified access system for Chamber of Representatives users. Centralizes access to all internal systems through a single authenticated entry point and, by design, positions the institution to feed a future AI with data from every connected system.",
+			es: "Nació para ayudar a mi madre con su tienda multimarcas: control de stock, vencimientos y respuestas rápidas a clientes. Evolucionó en una plataforma e-commerce SaaS multi-tenant para pymes argentinas — catálogo, checkout con reserva de stock, envíos por distancia real, pagos locales y panel admin. MVP avanzado production-ready; app Android y chatbot en roadmap.",
+			en: "Started to help my mother run her multi-brand store: stock control, expiry tracking, and faster answers for customers. It grew into a multi-tenant e-commerce SaaS for Argentine SMBs — catalog, checkout with stock reservation, distance-based shipping, local payments, and an admin panel. Advanced production-ready MVP; Android app and chatbot on the roadmap.",
 		},
 		highlights: [
 			{
-				es: "360+ usuarios activos en producción",
-				en: "360+ active users in production",
+				es: "SaaS multi-tenant: una instalación, múltiples tiendas aisladas con branding y credenciales de pago propias",
+				en: "Multi-tenant SaaS: one deployment, isolated stores with their own branding and payment credentials",
 			},
 			{
-				es: "Módulo de tutoriales que redujo el volumen de consultas básicas internas",
-				en: "Tutorials module that cut the volume of basic internal support queries",
+				es: "Carrito → checkout con reserva de stock en Redis (10 min) y pagos MercadoPago/Viumi con webhooks idempotentes",
+				en: "Cart → checkout with Redis stock reservation (10 min) and MercadoPago/Viumi payments with idempotent webhooks",
 			},
 			{
-				es: "Autenticación por DNI sin credenciales adicionales",
-				en: "DNI-based authentication without additional credentials",
+				es: "Checkout invitado WhatsApp-first: pedido creado primero, confirmación de contacto antes de despachar",
+				en: "WhatsApp-first guest checkout: order created first, contact verified before dispatch",
 			},
 			{
-				es: "Validación de permisos por sistema mediante adaptadores independientes",
-				en: "Per-system permission validation through independent adapters",
+				es: "Envíos por distancia real (Google Maps), pre-órdenes, motor de cupones/combos y panel admin con RBAC",
+				en: "Distance-based shipping (Google Maps), pre-orders, coupon/combo engine, and admin panel with RBAC",
 			},
 			{
-				es: "Capa de adaptadores que conecta con todas las bases de datos internas, lista para alimentar una IA institucional",
-				en: "Adapter layer connecting to every internal database, ready to feed an institution-wide AI",
+				es: "Monorepo documentado (~370 archivos TS), services + Zod, CI GitHub Actions, tests Jest + E2E Playwright",
+				en: "Documented monorepo (~370 TS files), services + Zod, GitHub Actions CI, Jest + Playwright E2E tests",
 			},
 			{
-				es: "Panel con accesos directos, documentos institucionales y enlaces de utilidad",
+				es: "Próximo: app admin Android (Expo) para operación móvil y chatbot de atención",
+				en: "Next up: Android admin app (Expo) for mobile ops and a customer-facing chatbot",
+			},
+		],
+		tech: [
+			"Next.js",
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"Prisma",
+			"PostgreSQL",
+			"Redis",
+			"Docker",
+			"Zod",
+			"Jest",
+			"Playwright",
+		],
+	},
+	{
+		title: { es: "Portal Institucional", en: "Institutional Portal" },
+		status: "completed",
+		description: {
+			es: "Punto de acceso único a los sistemas internos de la Cámara. Un login, permisos por sistema y acceso directo a lo que cada usuario necesita.",
+			en: "Single entry point to the Chamber's internal systems. One login, per-system permissions, and direct access to what each user needs.",
+		},
+		highlights: [
+			{
+				es: "410+ usuarios activos en producción",
+				en: "410+ active users in production",
+			},
+			{
+				es: "Autenticación por DNI, sin credenciales extra",
+				en: "DNI-based authentication, no extra credentials",
+			},
+			{
+				es: "Tutoriales integrados que redujeron consultas básicas de soporte",
+				en: "Built-in tutorials that cut basic internal support queries",
+			},
+			{
+				es: "Panel con accesos, documentos institucionales y enlaces de utilidad",
 				en: "Dashboard with shortcuts, institutional documents, and utility links",
 			},
 		],
@@ -59,25 +98,21 @@ export const projects: Project[] = [
 		},
 		status: "completed",
 		description: {
-			es: "Conjunto de experiencias interactivas para visitas a la institución: una interfaz en Python que integra una API web con firmware Arduino para controlar un robot, junto a una serie de minijuegos web. En uso desde 2022, hoy lo utilizan aproximadamente 200 usuarios por semana durante visitas de instituciones educativas y de otros ámbitos.",
-			en: "Set of interactive experiences for institutional visits: a Python interface integrating a web API with Arduino firmware to control a robot, alongside a suite of web-based mini-games. Live since 2022, currently used by about 200 weekly users during visits from educational and other institutions.",
+			es: "Experiencias interactivas para visitas: control de un robot en tiempo real y minijuegos web para público de distintas edades.",
+			en: "Interactive experiences for institutional visits: real-time robot control and web mini-games for audiences of all ages.",
 		},
 		highlights: [
 			{
-				es: "En producción desde 2022, ~200 usuarios por semana con público real",
-				en: "In production since 2022, ~200 weekly users with real audiences",
+				es: "En producción desde 2022, ~200 usuarios por semana",
+				en: "Live since 2022, ~200 weekly users",
 			},
 			{
-				es: "Control del robot en tiempo real mediante comandos HTTP",
-				en: "Real-time robot control via HTTP commands",
+				es: "Control del robot vía HTTP + firmware Arduino",
+				en: "Robot control via HTTP + Arduino firmware",
 			},
 			{
-				es: "Aplicación interactiva para control manual + minijuegos web complementarios",
-				en: "Interactive app for manual control plus complementary web mini-games",
-			},
-			{
-				es: "Integración directa con firmware Arduino",
-				en: "Direct integration with Arduino firmware",
+				es: "App de control manual y minijuegos web complementarios",
+				en: "Manual control app plus complementary web mini-games",
 			},
 		],
 		tech: ["Python", "Arduino", "REST API", "JavaScript", "IoT"],

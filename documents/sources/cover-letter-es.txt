@@ -1,0 +1,24 @@
+Martín Exequiel Morales
+Full Stack Developer · Disponible para trabajo remoto
+martin.exequiel.morales@gmail.com
+https://www.linkedin.com/in/martin-exequiel-morales/
+https://martin-morales-portfolio.vercel.app
+Argentina · GMT-3
+
+[Fecha]
+
+Estimado/a equipo de [Empresa]:
+
+Me dirijo a ustedes para expresar mi interés en el puesto de [Puesto]. Soy desarrollador Full Stack con más de cuatro años construyendo software en producción en la Cámara de Representantes de la Provincia de Misiones (Argentina). Busco desafíos remotos donde pueda generar impacto en eficiencia y fluidez para quienes usan el producto.
+
+En mi rol actual coordino al equipo de desarrollo e impulsé Next.js, TypeScript y Prisma como estándar del área. Entregué optimizaciones con impacto directo en usuarios: workers en segundo plano para conversión PDF, búsquedas async (~6 s a ~5 ms) y migración de monolitos PHP a clean architecture. También lideré el Portal Institucional, hoy con 410+ usuarios activos.
+
+En paralelo desarrollo Tienda Online SaaS, plataforma e-commerce multi-tenant para pymes argentinas, con checkout con reserva Redis, pagos MercadoPago/Viumi, envíos por distancia real y panel admin con RBAC.
+
+Mi stack principal incluye React, Next.js, TypeScript, Node.js, Prisma, PostgreSQL, Redis, Docker, Jest y Playwright, con base sólida en PHP y Python.
+
+Quedo a disposición para una entrevista. Adjunto mi CV; mi portfolio está en https://martin-morales-portfolio.vercel.app.
+
+Atentamente,
+
+Martín Exequiel Morales

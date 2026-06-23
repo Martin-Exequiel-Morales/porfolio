@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:documents": "node scripts/generate-documents.mjs"
+    "generate:documents": "node scripts/generate-documents.mjs",
+    "generate:linkedin-banner": "node scripts/generate-linkedin-banner.mjs"
   },
   "dependencies": {
     "motion": "^12.38.0",
